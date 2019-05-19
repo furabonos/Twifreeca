@@ -69,14 +69,70 @@
 		874A415022912B0B003B0363 /* TwifreecaTV */ = {
 			isa = PBXGroup;
 			children = (
-				874A415122912B0B003B0363 /* AppDelegate.swift */,
-				874A415322912B0B003B0363 /* ViewController.swift */,
-				874A415522912B0B003B0363 /* Main.storyboard */,
-				874A415822912B0C003B0363 /* Assets.xcassets */,
+				874A416322912D1C003B0363 /* Source */,
+				874A416422912D28003B0363 /* StoryBoard */,
+				874A416522912D43003B0363 /* Supporting Files */,
 				874A415A22912B0C003B0363 /* LaunchScreen.storyboard */,
-				874A415D22912B0C003B0363 /* Info.plist */,
 			);
 			path = TwifreecaTV;
+			sourceTree = "<group>";
+		};
+		874A416322912D1C003B0363 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				874A415122912B0B003B0363 /* AppDelegate.swift */,
+				874A416722912DBA003B0363 /* Util */,
+				874A416822912DC1003B0363 /* Model */,
+				874A416922912DCC003B0363 /* Service */,
+				874A416622912DAF003B0363 /* ViewController */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		874A416422912D28003B0363 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				874A415522912B0B003B0363 /* Main.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		874A416522912D43003B0363 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				874A415D22912B0C003B0363 /* Info.plist */,
+				874A415822912B0C003B0363 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		874A416622912DAF003B0363 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				874A415322912B0B003B0363 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		874A416722912DBA003B0363 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		874A416822912DC1003B0363 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		874A416922912DCC003B0363 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		AA27AB9155C8A3F6D0282E24 /* Pods */ = {
