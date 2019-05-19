@@ -12,6 +12,7 @@
 		874A415722912B0B003B0363 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 874A415522912B0B003B0363 /* Main.storyboard */; };
 		874A415922912B0C003B0363 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 874A415822912B0C003B0363 /* Assets.xcassets */; };
 		874A415C22912B0C003B0363 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 874A415A22912B0C003B0363 /* LaunchScreen.storyboard */; };
+		874A416B22912EAC003B0363 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874A416A22912EAC003B0363 /* testViewController.swift */; };
 		F8FE8E928925593541D06F1B /* Pods_TwifreecaTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 571404B79AC21D56A99FA970 /* Pods_TwifreecaTV.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		874A415822912B0C003B0363 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		874A415B22912B0C003B0363 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		874A415D22912B0C003B0363 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		874A416A22912EAC003B0363 /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
 		94A708F11BAA7FA0275DDB87 /* Pods-TwifreecaTV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwifreecaTV.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwifreecaTV/Pods-TwifreecaTV.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +126,7 @@
 		874A416822912DC1003B0363 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				874A416A22912EAC003B0363 /* testViewController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				874A416B22912EAC003B0363 /* testViewController.swift in Sources */,
 				874A415422912B0B003B0363 /* ViewController.swift in Sources */,
 				874A415222912B0B003B0363 /* AppDelegate.swift in Sources */,
 			);
