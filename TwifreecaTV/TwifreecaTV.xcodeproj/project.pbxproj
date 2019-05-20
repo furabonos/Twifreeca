@@ -133,7 +133,7 @@
 			children = (
 				56E4790122924043004640C3 /* testUtilViewController.swift */,
 			);
-			path = Util;
+			name = Util;
 			sourceTree = "<group>";
 		};
 		874A416822912DC1003B0363 /* Model */ = {
@@ -149,7 +149,7 @@
 			children = (
 				56E478FF22924038004640C3 /* testServiceViewController.swift */,
 			);
-			path = Service;
+			name = Service;
 			sourceTree = "<group>";
 		};
 		AA27AB9155C8A3F6D0282E24 /* Pods */ = {
