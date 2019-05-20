@@ -1,5 +1,5 @@
 //
-//  testUtilViewController.swift
+//  UtilTestViewController.swift
 //  TwifreecaTV
 //
 //  Created by Euijae Hong on 20/05/2019.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class testUtilViewController: UIViewController {
+class UtilTestViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Do any additional setup after loading the view.
     }
     

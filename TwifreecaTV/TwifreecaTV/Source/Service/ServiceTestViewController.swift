@@ -1,5 +1,5 @@
 //
-//  testServiceViewController.swift
+//  ServiceTestViewController.swift
 //  TwifreecaTV
 //
 //  Created by Euijae Hong on 20/05/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class testServiceViewController: UIViewController {
+class ServiceTestViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
