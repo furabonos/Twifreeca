@@ -1,24 +1,156 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Afreeca-->
+        <scene sceneID="nie-7D-6xg">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="sh1-9D-eZO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TdV-0d-wAF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ohn-4b-qMB">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.11543791679018146" green="0.50440022699474918" blue="0.96080166101455688" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="AfreecaTV" id="Ady-Vx-x2r">
+                                        <barButtonItem key="rightBarButtonItem" title="BJ찾기" id="h8N-fe-AYq">
+                                            <connections>
+                                                <segue destination="4eQ-L2-xL9" kind="show" id="oGE-hz-dcB"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ohn-4b-qMB" firstAttribute="leading" secondItem="Tja-io-u3a" secondAttribute="leading" id="GGX-SK-GjO"/>
+                            <constraint firstItem="Ohn-4b-qMB" firstAttribute="trailing" secondItem="Tja-io-u3a" secondAttribute="trailing" id="Hmm-5I-gjk"/>
+                            <constraint firstItem="Ohn-4b-qMB" firstAttribute="top" secondItem="Tja-io-u3a" secondAttribute="top" id="uu6-PR-7Ok"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Tja-io-u3a"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Afreeca" id="y4D-lJ-pA7"/>
+                    <navigationItem key="navigationItem" id="xGK-vV-EaI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1aa-89-qTa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3209" y="280"/>
+        </scene>
+        <!--Afreeca Search View Controller-->
+        <scene sceneID="PCE-J9-KGy">
+            <objects>
+                <viewController id="4eQ-L2-xL9" customClass="AfreecaSearchViewController" customModule="TwifreecaTV" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ni1-K6-hPJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Agx-x5-aku">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.1154379168" green="0.50440022699999998" blue="0.96080166099999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="BJ찾기" id="grS-4t-lCR">
+                                        <barButtonItem key="leftBarButtonItem" title="취소" id="y1s-Uw-M6t">
+                                            <connections>
+                                                <action selector="backBtn:" destination="4eQ-L2-xL9" id="76J-sD-Paj"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Agx-x5-aku" firstAttribute="leading" secondItem="aUT-rf-2hr" secondAttribute="leading" id="8Bf-zK-OMZ"/>
+                            <constraint firstItem="Agx-x5-aku" firstAttribute="trailing" secondItem="aUT-rf-2hr" secondAttribute="trailing" id="nAK-4f-6N7"/>
+                            <constraint firstItem="Agx-x5-aku" firstAttribute="top" secondItem="aUT-rf-2hr" secondAttribute="top" id="rg4-Ex-Lav"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aUT-rf-2hr"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aKs-tm-HNV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="3955" y="278"/>
+        </scene>
+        <!--Twitch-->
+        <scene sceneID="mrm-Rz-wt7">
+            <objects>
+                <viewController id="poj-hl-jec" customClass="TwitchViewController" customModule="TwifreecaTV" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="APY-Rd-wSW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABL-HK-isT">
+                                <rect key="frame" x="151" y="269" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwG-3F-5fA">
+                                <rect key="frame" x="146" y="360" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PLa-To-PQx">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="bLh-9I-VL5"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PLa-To-PQx" firstAttribute="top" secondItem="75c-8m-t0y" secondAttribute="top" id="6H6-9z-ps2"/>
+                            <constraint firstItem="PLa-To-PQx" firstAttribute="leading" secondItem="75c-8m-t0y" secondAttribute="leading" id="IuL-wH-aMs"/>
+                            <constraint firstItem="PLa-To-PQx" firstAttribute="trailing" secondItem="75c-8m-t0y" secondAttribute="trailing" id="bQA-na-ZHE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="75c-8m-t0y"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Twitch" id="f8T-c8-dFU"/>
+                    <navigationItem key="navigationItem" id="Yxg-jN-rwZ"/>
+                    <connections>
+                        <outlet property="testLabel" destination="ABL-HK-isT" id="afS-dd-76i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RY4-hz-1jX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3208.8000000000002" y="-441.22938530734638"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="pkk-qd-Lou">
+            <objects>
+                <tabBarController storyboardIdentifier="TwitchViewController" automaticallyAdjustsScrollViewInsets="NO" id="9ZQ-tM-FB5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ngd-Fk-xKo">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="poj-hl-jec" kind="relationship" relationship="viewControllers" id="1Bt-4a-Xhi"/>
+                        <segue destination="sh1-9D-eZO" kind="relationship" relationship="viewControllers" id="9BF-DT-90U"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9mz-9X-AbT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2269.5999999999999" y="-441.22938530734638"/>
         </scene>
     </scenes>
 </document>

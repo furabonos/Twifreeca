@@ -7,22 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56B5478A22951FE300BB21CB /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5478922951FE300BB21CB /* Result.swift */; };
+		56B5478C2295201300BB21CB /* AfreecaSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5478B2295201300BB21CB /* AfreecaSearch.swift */; };
+		56B5478E2295204300BB21CB /* AfreecaSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5478D2295204300BB21CB /* AfreecaSearchService.swift */; };
+		56B547902295217800BB21CB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5478F2295217800BB21CB /* API.swift */; };
+		56B547922295262700BB21CB /* AfreecaSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B547912295262700BB21CB /* AfreecaSearchViewController.swift */; };
 		56E478FE2292353C004640C3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E478FD2292353C004640C3 /* LoginViewController.swift */; };
-		56E479042292435D004640C3 /* UtilTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E479032292435D004640C3 /* UtilTestViewController.swift */; };
-		56E4790622924367004640C3 /* ServiceTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E4790522924367004640C3 /* ServiceTestViewController.swift */; };
+		56E4790822924C09004640C3 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56E4790722924C09004640C3 /* Register.storyboard */; };
+		56E4790A22924D7A004640C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56E4790922924D7A004640C3 /* GoogleService-Info.plist */; };
+		56E4790D229255D8004640C3 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E4790C229255D8004640C3 /* EmailViewController.swift */; };
+		56E4790F2292829F004640C3 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E4790E2292829F004640C3 /* Regex.swift */; };
+		56E479112293932F004640C3 /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E479102293932F004640C3 /* Method.swift */; };
+		56E4791322939941004640C3 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E4791222939941004640C3 /* Singleton.swift */; };
+		56E4791A22939CE2004640C3 /* TwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E4791922939CE2004640C3 /* TwitchViewController.swift */; };
+		56E4791E22939DE2004640C3 /* AfreecaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E4791D22939DE2004640C3 /* AfreecaViewController.swift */; };
+		56E479202293E03D004640C3 /* MoveToStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E4791F2293E03D004640C3 /* MoveToStoryboard.swift */; };
 		874A415222912B0B003B0363 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874A415122912B0B003B0363 /* AppDelegate.swift */; };
 		874A415722912B0B003B0363 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 874A415522912B0B003B0363 /* Main.storyboard */; };
 		874A415922912B0C003B0363 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 874A415822912B0C003B0363 /* Assets.xcassets */; };
 		874A415C22912B0C003B0363 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 874A415A22912B0C003B0363 /* LaunchScreen.storyboard */; };
-		874A416B22912EAC003B0363 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874A416A22912EAC003B0363 /* testViewController.swift */; };
 		F8FE8E928925593541D06F1B /* Pods_TwifreecaTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 571404B79AC21D56A99FA970 /* Pods_TwifreecaTV.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		316EC346405B3AA27A6BCB47 /* Pods-TwifreecaTV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwifreecaTV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwifreecaTV/Pods-TwifreecaTV.debug.xcconfig"; sourceTree = "<group>"; };
+		56B5478922951FE300BB21CB /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		56B5478B2295201300BB21CB /* AfreecaSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfreecaSearch.swift; sourceTree = "<group>"; };
+		56B5478D2295204300BB21CB /* AfreecaSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfreecaSearchService.swift; sourceTree = "<group>"; };
+		56B5478F2295217800BB21CB /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		56B547912295262700BB21CB /* AfreecaSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfreecaSearchViewController.swift; sourceTree = "<group>"; };
 		56E478FD2292353C004640C3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		56E479032292435D004640C3 /* UtilTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilTestViewController.swift; sourceTree = "<group>"; };
-		56E4790522924367004640C3 /* ServiceTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTestViewController.swift; sourceTree = "<group>"; };
+		56E4790722924C09004640C3 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		56E4790922924D7A004640C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		56E4790C229255D8004640C3 /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
+		56E4790E2292829F004640C3 /* Regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
+		56E479102293932F004640C3 /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
+		56E4791222939941004640C3 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
+		56E4791922939CE2004640C3 /* TwitchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitchViewController.swift; sourceTree = "<group>"; };
+		56E4791D22939DE2004640C3 /* AfreecaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfreecaViewController.swift; sourceTree = "<group>"; };
+		56E4791F2293E03D004640C3 /* MoveToStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveToStoryboard.swift; sourceTree = "<group>"; };
 		571404B79AC21D56A99FA970 /* Pods_TwifreecaTV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwifreecaTV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		874A414E22912B0B003B0363 /* TwifreecaTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwifreecaTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		874A415122912B0B003B0363 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -30,7 +53,6 @@
 		874A415822912B0C003B0363 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		874A415B22912B0C003B0363 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		874A415D22912B0C003B0363 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		874A416A22912EAC003B0363 /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
 		94A708F11BAA7FA0275DDB87 /* Pods-TwifreecaTV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwifreecaTV.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwifreecaTV/Pods-TwifreecaTV.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,8 +80,43 @@
 			isa = PBXGroup;
 			children = (
 				56E478FD2292353C004640C3 /* LoginViewController.swift */,
+				56E4790B229254C0004640C3 /* New */,
 			);
 			path = RegisterViewController;
+			sourceTree = "<group>";
+		};
+		56E4790B229254C0004640C3 /* New */ = {
+			isa = PBXGroup;
+			children = (
+				56E4790C229255D8004640C3 /* EmailViewController.swift */,
+			);
+			path = New;
+			sourceTree = "<group>";
+		};
+		56E4791422939A84004640C3 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				56E4791622939A95004640C3 /* Afreeca */,
+				56E4791522939A8C004640C3 /* Twitch */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		56E4791522939A8C004640C3 /* Twitch */ = {
+			isa = PBXGroup;
+			children = (
+				56E4791922939CE2004640C3 /* TwitchViewController.swift */,
+			);
+			path = Twitch;
+			sourceTree = "<group>";
+		};
+		56E4791622939A95004640C3 /* Afreeca */ = {
+			isa = PBXGroup;
+			children = (
+				56E4791D22939DE2004640C3 /* AfreecaViewController.swift */,
+				56B547912295262700BB21CB /* AfreecaSearchViewController.swift */,
+			);
+			path = Afreeca;
 			sourceTree = "<group>";
 		};
 		874A414522912B0B003B0363 = {
@@ -87,6 +144,7 @@
 				874A416422912D28003B0363 /* StoryBoard */,
 				874A416522912D43003B0363 /* Supporting Files */,
 				874A415A22912B0C003B0363 /* LaunchScreen.storyboard */,
+				56E4790922924D7A004640C3 /* GoogleService-Info.plist */,
 			);
 			path = TwifreecaTV;
 			sourceTree = "<group>";
@@ -107,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				874A415522912B0B003B0363 /* Main.storyboard */,
+				56E4790722924C09004640C3 /* Register.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -123,6 +182,7 @@
 		874A416622912DAF003B0363 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				56E4791422939A84004640C3 /* Main */,
 				56E478FC229234E6004640C3 /* RegisterViewController */,
 			);
 			path = ViewController;
@@ -131,7 +191,10 @@
 		874A416722912DBA003B0363 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				56E479032292435D004640C3 /* UtilTestViewController.swift */,
+				56E4790E2292829F004640C3 /* Regex.swift */,
+				56E479102293932F004640C3 /* Method.swift */,
+				56E4791F2293E03D004640C3 /* MoveToStoryboard.swift */,
+				56B5478F2295217800BB21CB /* API.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -139,7 +202,9 @@
 		874A416822912DC1003B0363 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				874A416A22912EAC003B0363 /* testViewController.swift */,
+				56E4791222939941004640C3 /* Singleton.swift */,
+				56B5478922951FE300BB21CB /* Result.swift */,
+				56B5478B2295201300BB21CB /* AfreecaSearch.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -147,7 +212,7 @@
 		874A416922912DCC003B0363 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				56E4790522924367004640C3 /* ServiceTestViewController.swift */,
+				56B5478D2295204300BB21CB /* AfreecaSearchService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -223,7 +288,9 @@
 			files = (
 				874A415C22912B0C003B0363 /* LaunchScreen.storyboard in Resources */,
 				874A415922912B0C003B0363 /* Assets.xcassets in Resources */,
+				56E4790A22924D7A004640C3 /* GoogleService-Info.plist in Resources */,
 				874A415722912B0B003B0363 /* Main.storyboard in Resources */,
+				56E4790822924C09004640C3 /* Register.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,11 +350,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56E479042292435D004640C3 /* UtilTestViewController.swift in Sources */,
-				56E4790622924367004640C3 /* ServiceTestViewController.swift in Sources */,
+				56E4790D229255D8004640C3 /* EmailViewController.swift in Sources */,
+				56E4790F2292829F004640C3 /* Regex.swift in Sources */,
+				56B547922295262700BB21CB /* AfreecaSearchViewController.swift in Sources */,
 				56E478FE2292353C004640C3 /* LoginViewController.swift in Sources */,
-				874A416B22912EAC003B0363 /* testViewController.swift in Sources */,
+				56E4791322939941004640C3 /* Singleton.swift in Sources */,
+				56E4791E22939DE2004640C3 /* AfreecaViewController.swift in Sources */,
+				56E479112293932F004640C3 /* Method.swift in Sources */,
+				56E4791A22939CE2004640C3 /* TwitchViewController.swift in Sources */,
+				56B5478E2295204300BB21CB /* AfreecaSearchService.swift in Sources */,
+				56B547902295217800BB21CB /* API.swift in Sources */,
+				56E479202293E03D004640C3 /* MoveToStoryboard.swift in Sources */,
 				874A415222912B0B003B0363 /* AppDelegate.swift in Sources */,
+				56B5478A22951FE300BB21CB /* Result.swift in Sources */,
+				56B5478C2295201300BB21CB /* AfreecaSearch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,7 +512,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9UT8US6W3V;
-				INFOPLIST_FILE = TwifreecaTV/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TwifreecaTV/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,7 +531,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9UT8US6W3V;
-				INFOPLIST_FILE = TwifreecaTV/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TwifreecaTV/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
