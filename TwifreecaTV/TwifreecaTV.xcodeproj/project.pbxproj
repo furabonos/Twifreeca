@@ -12,6 +12,7 @@
 		56B5478E2295204300BB21CB /* AfreecaSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5478D2295204300BB21CB /* AfreecaSearchService.swift */; };
 		56B547902295217800BB21CB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5478F2295217800BB21CB /* API.swift */; };
 		56B547922295262700BB21CB /* AfreecaSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B547912295262700BB21CB /* AfreecaSearchViewController.swift */; };
+		56B5479822967C1C00BB21CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56B5479722967C1C00BB21CB /* Assets.xcassets */; };
 		56E478FE2292353C004640C3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E478FD2292353C004640C3 /* LoginViewController.swift */; };
 		56E4790822924C09004640C3 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56E4790722924C09004640C3 /* Register.storyboard */; };
 		56E4790A22924D7A004640C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56E4790922924D7A004640C3 /* GoogleService-Info.plist */; };
@@ -24,7 +25,6 @@
 		56E479202293E03D004640C3 /* MoveToStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E4791F2293E03D004640C3 /* MoveToStoryboard.swift */; };
 		874A415222912B0B003B0363 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874A415122912B0B003B0363 /* AppDelegate.swift */; };
 		874A415722912B0B003B0363 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 874A415522912B0B003B0363 /* Main.storyboard */; };
-		874A415922912B0C003B0363 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 874A415822912B0C003B0363 /* Assets.xcassets */; };
 		874A415C22912B0C003B0363 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 874A415A22912B0C003B0363 /* LaunchScreen.storyboard */; };
 		F8FE8E928925593541D06F1B /* Pods_TwifreecaTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 571404B79AC21D56A99FA970 /* Pods_TwifreecaTV.framework */; };
 /* End PBXBuildFile section */
@@ -36,6 +36,7 @@
 		56B5478D2295204300BB21CB /* AfreecaSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfreecaSearchService.swift; sourceTree = "<group>"; };
 		56B5478F2295217800BB21CB /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		56B547912295262700BB21CB /* AfreecaSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfreecaSearchViewController.swift; sourceTree = "<group>"; };
+		56B5479722967C1C00BB21CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56E478FD2292353C004640C3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		56E4790722924C09004640C3 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		56E4790922924D7A004640C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -50,7 +51,6 @@
 		874A414E22912B0B003B0363 /* TwifreecaTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwifreecaTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		874A415122912B0B003B0363 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		874A415622912B0B003B0363 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		874A415822912B0C003B0363 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		874A415B22912B0C003B0363 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		874A415D22912B0C003B0363 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94A708F11BAA7FA0275DDB87 /* Pods-TwifreecaTV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwifreecaTV.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwifreecaTV/Pods-TwifreecaTV.release.xcconfig"; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				874A415D22912B0C003B0363 /* Info.plist */,
-				874A415822912B0C003B0363 /* Assets.xcassets */,
+				56B5479722967C1C00BB21CB /* Assets.xcassets */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -287,10 +287,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				874A415C22912B0C003B0363 /* LaunchScreen.storyboard in Resources */,
-				874A415922912B0C003B0363 /* Assets.xcassets in Resources */,
 				56E4790A22924D7A004640C3 /* GoogleService-Info.plist in Resources */,
 				874A415722912B0B003B0363 /* Main.storyboard in Resources */,
 				56E4790822924C09004640C3 /* Register.storyboard in Resources */,
+				56B5479822967C1C00BB21CB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,11 +21,12 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ohn-4b-qMB">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" red="0.11543791679018146" green="0.50440022699474918" blue="0.96080166101455688" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="textColor" red="0.027450980390000001" green="0.23921568630000001" blue="0.65490196079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="AfreecaTV" id="Ady-Vx-x2r">
                                         <barButtonItem key="rightBarButtonItem" title="BJ찾기" id="h8N-fe-AYq">
+                                            <color key="tintColor" red="0.027450980390000001" green="0.23921568630000001" blue="0.65490196079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
                                                 <segue destination="4eQ-L2-xL9" kind="show" id="oGE-hz-dcB"/>
                                             </connections>
@@ -42,7 +43,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Tja-io-u3a"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Afreeca" id="y4D-lJ-pA7"/>
+                    <tabBarItem key="tabBarItem" title="Afreeca" image="AFLOGO" id="y4D-lJ-pA7"/>
                     <navigationItem key="navigationItem" id="xGK-vV-EaI"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1aa-89-qTa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -60,7 +61,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Agx-x5-aku">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" red="0.1154379168" green="0.50440022699999998" blue="0.96080166099999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="textColor" red="0.027450980392156862" green="0.23921568627450979" blue="0.65490196078431373" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="BJ찾기" id="grS-4t-lCR">
@@ -72,19 +73,46 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pxD-d6-Dfb">
+                                <rect key="frame" x="0.0" y="64" width="375" height="60"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="place" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1fd-0N-5u3">
+                                        <rect key="frame" x="8" y="15" width="359" height="30"/>
+                                        <color key="backgroundColor" red="0.027450980390000001" green="0.23921568630000001" blue="0.65490196079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="0.18823529411764706" green="0.38431372549019605" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="1fd-0N-5u3" firstAttribute="top" secondItem="pxD-d6-Dfb" secondAttribute="top" constant="15" id="0YL-jS-SUR"/>
+                                    <constraint firstAttribute="height" constant="60" id="Bbi-eL-8cI"/>
+                                    <constraint firstAttribute="trailing" secondItem="1fd-0N-5u3" secondAttribute="trailing" constant="8" id="Mzh-Iq-AW7"/>
+                                    <constraint firstItem="1fd-0N-5u3" firstAttribute="leading" secondItem="pxD-d6-Dfb" secondAttribute="leading" constant="8" id="dVT-Wf-rTp"/>
+                                    <constraint firstAttribute="bottom" secondItem="1fd-0N-5u3" secondAttribute="bottom" constant="15" id="vJu-sU-lOy"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Agx-x5-aku" firstAttribute="leading" secondItem="aUT-rf-2hr" secondAttribute="leading" id="8Bf-zK-OMZ"/>
+                            <constraint firstItem="pxD-d6-Dfb" firstAttribute="leading" secondItem="aUT-rf-2hr" secondAttribute="leading" id="BOQ-u9-0Lf"/>
+                            <constraint firstItem="pxD-d6-Dfb" firstAttribute="top" secondItem="Agx-x5-aku" secondAttribute="bottom" id="N20-wU-GDs"/>
+                            <constraint firstItem="aUT-rf-2hr" firstAttribute="trailing" secondItem="pxD-d6-Dfb" secondAttribute="trailing" id="N7B-u0-1BQ"/>
                             <constraint firstItem="Agx-x5-aku" firstAttribute="trailing" secondItem="aUT-rf-2hr" secondAttribute="trailing" id="nAK-4f-6N7"/>
                             <constraint firstItem="Agx-x5-aku" firstAttribute="top" secondItem="aUT-rf-2hr" secondAttribute="top" id="rg4-Ex-Lav"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aUT-rf-2hr"/>
                     </view>
+                    <connections>
+                        <outlet property="searchTextField" destination="1fd-0N-5u3" id="ncm-gC-KPV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aKs-tm-HNV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3955" y="278"/>
+            <point key="canvasLocation" x="3954.4000000000001" y="277.51124437781112"/>
         </scene>
         <!--Twitch-->
         <scene sceneID="mrm-Rz-wt7">
@@ -110,8 +138,11 @@
                             </label>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PLa-To-PQx">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.36862745098039218" green="0.24705882352941178" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
                                 <items>
-                                    <navigationItem title="Title" id="bLh-9I-VL5"/>
+                                    <navigationItem title="TwitchTV" id="bLh-9I-VL5"/>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -153,4 +184,7 @@
             <point key="canvasLocation" x="2269.5999999999999" y="-441.22938530734638"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AFLOGO" width="22" height="23"/>
+    </resources>
 </document>

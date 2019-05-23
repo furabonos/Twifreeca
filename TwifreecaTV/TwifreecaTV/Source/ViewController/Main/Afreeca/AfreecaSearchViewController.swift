@@ -9,11 +9,26 @@
 import UIKit
 
 class AfreecaSearchViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var searchTextField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupInitialize()
+        
+    }
+    
+    func setupInitialize() {
+        let string = NSLocalizedString("아프리카TV 검색", comment: "Some comment")
+        searchTextField.attributedPlaceholder = NSAttributedString(string: string ,attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        searchTextField.delegate = self
+        searchTextField.returnKeyType = .search
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.view.endEditing(true)
     }
     
     
@@ -21,4 +36,11 @@ class AfreecaSearchViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+}
+
+extension AfreecaSearchViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("ssss")
+        return true
+    }
 }
