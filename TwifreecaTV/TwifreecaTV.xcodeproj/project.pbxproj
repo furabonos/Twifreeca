@@ -13,6 +13,8 @@
 		56B547902295217800BB21CB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5478F2295217800BB21CB /* API.swift */; };
 		56B547922295262700BB21CB /* AfreecaSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B547912295262700BB21CB /* AfreecaSearchViewController.swift */; };
 		56B5479822967C1C00BB21CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56B5479722967C1C00BB21CB /* Assets.xcassets */; };
+		56B5479D22968FB800BB21CB /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5479B22968FB800BB21CB /* SearchCollectionViewCell.swift */; };
+		56B5479E22968FB800BB21CB /* SearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56B5479C22968FB800BB21CB /* SearchCollectionViewCell.xib */; };
 		56E478FE2292353C004640C3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E478FD2292353C004640C3 /* LoginViewController.swift */; };
 		56E4790822924C09004640C3 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56E4790722924C09004640C3 /* Register.storyboard */; };
 		56E4790A22924D7A004640C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56E4790922924D7A004640C3 /* GoogleService-Info.plist */; };
@@ -37,6 +39,8 @@
 		56B5478F2295217800BB21CB /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		56B547912295262700BB21CB /* AfreecaSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfreecaSearchViewController.swift; sourceTree = "<group>"; };
 		56B5479722967C1C00BB21CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		56B5479B22968FB800BB21CB /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		56B5479C22968FB800BB21CB /* SearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCollectionViewCell.xib; sourceTree = "<group>"; };
 		56E478FD2292353C004640C3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		56E4790722924C09004640C3 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		56E4790922924D7A004640C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -74,6 +78,24 @@
 				571404B79AC21D56A99FA970 /* Pods_TwifreecaTV.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		56B5479922968A8D00BB21CB /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				56B547912295262700BB21CB /* AfreecaSearchViewController.swift */,
+				56B5479A22968E5A00BB21CB /* Cell */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		56B5479A22968E5A00BB21CB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				56B5479B22968FB800BB21CB /* SearchCollectionViewCell.swift */,
+				56B5479C22968FB800BB21CB /* SearchCollectionViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		56E478FC229234E6004640C3 /* RegisterViewController */ = {
@@ -114,7 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				56E4791D22939DE2004640C3 /* AfreecaViewController.swift */,
-				56B547912295262700BB21CB /* AfreecaSearchViewController.swift */,
+				56B5479922968A8D00BB21CB /* Search */,
 			);
 			path = Afreeca;
 			sourceTree = "<group>";
@@ -286,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56B5479E22968FB800BB21CB /* SearchCollectionViewCell.xib in Resources */,
 				874A415C22912B0C003B0363 /* LaunchScreen.storyboard in Resources */,
 				56E4790A22924D7A004640C3 /* GoogleService-Info.plist in Resources */,
 				874A415722912B0B003B0363 /* Main.storyboard in Resources */,
@@ -364,6 +387,7 @@
 				874A415222912B0B003B0363 /* AppDelegate.swift in Sources */,
 				56B5478A22951FE300BB21CB /* Result.swift in Sources */,
 				56B5478C2295201300BB21CB /* AfreecaSearch.swift in Sources */,
+				56B5479D22968FB800BB21CB /* SearchCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
