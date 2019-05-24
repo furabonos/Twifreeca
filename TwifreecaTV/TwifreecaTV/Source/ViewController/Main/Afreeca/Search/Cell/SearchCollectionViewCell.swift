@@ -10,9 +10,18 @@ import UIKit
 
 class SearchCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var bjNameLabel: UILabel!
+    @IBOutlet weak var bjProfileImageView: UIImageView!
+    @IBOutlet weak var broadcastMent: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        setupInitialize()
+    }
+    
+    func setupInitialize() {
+        broadcastMent.adjustsFontSizeToFitWidth = true
     }
 
 }
+     

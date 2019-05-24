@@ -34,6 +34,11 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TCk-MB-Q1c">
+                                <rect key="frame" x="67" y="269" width="170" height="113"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -48,7 +53,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1aa-89-qTa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3209" y="280"/>
+            <point key="canvasLocation" x="3208.8000000000002" y="279.31034482758622"/>
         </scene>
         <!--Afreeca Search View Controller-->
         <scene sceneID="PCE-J9-KGy">
@@ -95,8 +100,8 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WZL-s2-UL0">
-                                <rect key="frame" x="0.0" y="124" width="375" height="543"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="134" width="375" height="533"/>
+                                <color key="backgroundColor" red="0.30334307752010703" green="0.73427002516094442" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LNl-SP-43a">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -114,7 +119,7 @@
                             <constraint firstItem="pxD-d6-Dfb" firstAttribute="top" secondItem="Agx-x5-aku" secondAttribute="bottom" id="N20-wU-GDs"/>
                             <constraint firstItem="aUT-rf-2hr" firstAttribute="trailing" secondItem="pxD-d6-Dfb" secondAttribute="trailing" id="N7B-u0-1BQ"/>
                             <constraint firstItem="aUT-rf-2hr" firstAttribute="bottom" secondItem="WZL-s2-UL0" secondAttribute="bottom" id="S1X-hK-vEn"/>
-                            <constraint firstItem="WZL-s2-UL0" firstAttribute="top" secondItem="pxD-d6-Dfb" secondAttribute="bottom" id="Y38-xd-DtG"/>
+                            <constraint firstItem="WZL-s2-UL0" firstAttribute="top" secondItem="pxD-d6-Dfb" secondAttribute="bottom" constant="10" id="Y38-xd-DtG"/>
                             <constraint firstItem="aUT-rf-2hr" firstAttribute="trailing" secondItem="WZL-s2-UL0" secondAttribute="trailing" id="dRx-5z-MP7"/>
                             <constraint firstItem="Agx-x5-aku" firstAttribute="trailing" secondItem="aUT-rf-2hr" secondAttribute="trailing" id="nAK-4f-6N7"/>
                             <constraint firstItem="Agx-x5-aku" firstAttribute="top" secondItem="aUT-rf-2hr" secondAttribute="top" id="rg4-Ex-Lav"/>
