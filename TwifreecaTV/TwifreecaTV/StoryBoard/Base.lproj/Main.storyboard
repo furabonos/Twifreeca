@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Afreeca-->
+        <!--AfreecaTV-->
         <scene sceneID="nie-7D-6xg">
             <objects>
                 <viewController id="sh1-9D-eZO" sceneMemberID="viewController">
@@ -18,22 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ohn-4b-qMB">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" red="0.027450980390000001" green="0.23921568630000001" blue="0.65490196079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="AfreecaTV" id="Ady-Vx-x2r">
-                                        <barButtonItem key="rightBarButtonItem" title="BJ찾기" id="h8N-fe-AYq">
-                                            <color key="tintColor" red="0.027450980390000001" green="0.23921568630000001" blue="0.65490196079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <connections>
-                                                <segue destination="4eQ-L2-xL9" kind="show" id="oGE-hz-dcB"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TCk-MB-Q1c">
                                 <rect key="frame" x="67" y="269" width="170" height="113"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -41,21 +25,21 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Ohn-4b-qMB" firstAttribute="leading" secondItem="Tja-io-u3a" secondAttribute="leading" id="GGX-SK-GjO"/>
-                            <constraint firstItem="Ohn-4b-qMB" firstAttribute="trailing" secondItem="Tja-io-u3a" secondAttribute="trailing" id="Hmm-5I-gjk"/>
-                            <constraint firstItem="Ohn-4b-qMB" firstAttribute="top" secondItem="Tja-io-u3a" secondAttribute="top" id="uu6-PR-7Ok"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Tja-io-u3a"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Afreeca" image="AFLOGO" id="y4D-lJ-pA7"/>
-                    <navigationItem key="navigationItem" id="xGK-vV-EaI"/>
+                    <navigationItem key="navigationItem" title="AfreecaTV" id="xGK-vV-EaI">
+                        <barButtonItem key="rightBarButtonItem" title="BJ찾기" id="Shd-rw-fqL">
+                            <connections>
+                                <segue destination="4eQ-L2-xL9" kind="push" id="iKG-nJ-uq6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1aa-89-qTa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3208.8000000000002" y="279.31034482758622"/>
+            <point key="canvasLocation" x="4015" y="278"/>
         </scene>
-        <!--Afreeca Search View Controller-->
+        <!--BJ찾기-->
         <scene sceneID="PCE-J9-KGy">
             <objects>
                 <viewController id="4eQ-L2-xL9" customClass="AfreecaSearchViewController" customModule="TwifreecaTV" customModuleProvider="target" sceneMemberID="viewController">
@@ -63,21 +47,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Agx-x5-aku">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" red="0.027450980392156862" green="0.23921568627450979" blue="0.65490196078431373" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="BJ찾기" id="grS-4t-lCR">
-                                        <barButtonItem key="leftBarButtonItem" title="취소" id="y1s-Uw-M6t">
-                                            <connections>
-                                                <action selector="backBtn:" destination="4eQ-L2-xL9" id="76J-sD-Paj"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pxD-d6-Dfb">
                                 <rect key="frame" x="0.0" y="64" width="375" height="60"/>
                                 <subviews>
@@ -92,16 +61,16 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.18823529411764706" green="0.38431372549019605" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="1fd-0N-5u3" firstAttribute="top" secondItem="pxD-d6-Dfb" secondAttribute="top" constant="15" id="0YL-jS-SUR"/>
-                                    <constraint firstAttribute="height" constant="60" id="Bbi-eL-8cI"/>
-                                    <constraint firstAttribute="trailing" secondItem="1fd-0N-5u3" secondAttribute="trailing" constant="8" id="Mzh-Iq-AW7"/>
-                                    <constraint firstItem="1fd-0N-5u3" firstAttribute="leading" secondItem="pxD-d6-Dfb" secondAttribute="leading" constant="8" id="dVT-Wf-rTp"/>
-                                    <constraint firstAttribute="bottom" secondItem="1fd-0N-5u3" secondAttribute="bottom" constant="15" id="vJu-sU-lOy"/>
+                                    <constraint firstItem="1fd-0N-5u3" firstAttribute="leading" secondItem="pxD-d6-Dfb" secondAttribute="leading" constant="8" id="A07-vl-Aqx"/>
+                                    <constraint firstAttribute="bottom" secondItem="1fd-0N-5u3" secondAttribute="bottom" constant="15" id="XcT-tm-zek"/>
+                                    <constraint firstItem="1fd-0N-5u3" firstAttribute="top" secondItem="pxD-d6-Dfb" secondAttribute="top" constant="15" id="cUO-X5-EVi"/>
+                                    <constraint firstAttribute="trailing" secondItem="1fd-0N-5u3" secondAttribute="trailing" constant="8" id="sUm-6X-DAC"/>
+                                    <constraint firstAttribute="height" constant="60" id="txh-yo-F6J"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WZL-s2-UL0">
-                                <rect key="frame" x="0.0" y="134" width="375" height="533"/>
-                                <color key="backgroundColor" red="0.30334307752010703" green="0.73427002516094442" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="0.0" y="124" width="375" height="494"/>
+                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LNl-SP-43a">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -114,18 +83,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="WZL-s2-UL0" firstAttribute="leading" secondItem="aUT-rf-2hr" secondAttribute="leading" id="87G-36-a2S"/>
-                            <constraint firstItem="Agx-x5-aku" firstAttribute="leading" secondItem="aUT-rf-2hr" secondAttribute="leading" id="8Bf-zK-OMZ"/>
-                            <constraint firstItem="pxD-d6-Dfb" firstAttribute="leading" secondItem="aUT-rf-2hr" secondAttribute="leading" id="BOQ-u9-0Lf"/>
-                            <constraint firstItem="pxD-d6-Dfb" firstAttribute="top" secondItem="Agx-x5-aku" secondAttribute="bottom" id="N20-wU-GDs"/>
-                            <constraint firstItem="aUT-rf-2hr" firstAttribute="trailing" secondItem="pxD-d6-Dfb" secondAttribute="trailing" id="N7B-u0-1BQ"/>
+                            <constraint firstItem="aUT-rf-2hr" firstAttribute="bottom" secondItem="WZL-s2-UL0" secondAttribute="bottom" id="IsK-rz-HED"/>
                             <constraint firstItem="aUT-rf-2hr" firstAttribute="bottom" secondItem="WZL-s2-UL0" secondAttribute="bottom" id="S1X-hK-vEn"/>
-                            <constraint firstItem="WZL-s2-UL0" firstAttribute="top" secondItem="pxD-d6-Dfb" secondAttribute="bottom" constant="10" id="Y38-xd-DtG"/>
                             <constraint firstItem="aUT-rf-2hr" firstAttribute="trailing" secondItem="WZL-s2-UL0" secondAttribute="trailing" id="dRx-5z-MP7"/>
-                            <constraint firstItem="Agx-x5-aku" firstAttribute="trailing" secondItem="aUT-rf-2hr" secondAttribute="trailing" id="nAK-4f-6N7"/>
-                            <constraint firstItem="Agx-x5-aku" firstAttribute="top" secondItem="aUT-rf-2hr" secondAttribute="top" id="rg4-Ex-Lav"/>
+                            <constraint firstItem="pxD-d6-Dfb" firstAttribute="top" secondItem="aUT-rf-2hr" secondAttribute="top" id="e3u-7u-jae"/>
+                            <constraint firstItem="pxD-d6-Dfb" firstAttribute="trailing" secondItem="aUT-rf-2hr" secondAttribute="trailing" id="ise-9Z-A7D"/>
+                            <constraint firstItem="pxD-d6-Dfb" firstAttribute="leading" secondItem="aUT-rf-2hr" secondAttribute="leading" id="qwH-Gq-Tlb"/>
+                            <constraint firstItem="WZL-s2-UL0" firstAttribute="trailing" secondItem="aUT-rf-2hr" secondAttribute="trailing" id="rIF-iY-hs0"/>
+                            <constraint firstItem="WZL-s2-UL0" firstAttribute="leading" secondItem="aUT-rf-2hr" secondAttribute="leading" id="sdv-ON-Fqc"/>
+                            <constraint firstItem="WZL-s2-UL0" firstAttribute="top" secondItem="pxD-d6-Dfb" secondAttribute="bottom" id="zEX-Px-yMe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aUT-rf-2hr"/>
                     </view>
+                    <navigationItem key="navigationItem" title="BJ찾기" id="k95-sG-DGo"/>
                     <connections>
                         <outlet property="collectionView" destination="WZL-s2-UL0" id="2U6-MW-bDX"/>
                         <outlet property="searchTextField" destination="1fd-0N-5u3" id="ncm-gC-KPV"/>
@@ -133,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aKs-tm-HNV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3954.4000000000001" y="277.51124437781112"/>
+            <point key="canvasLocation" x="4796" y="279"/>
         </scene>
         <!--Twitch-->
         <scene sceneID="mrm-Rz-wt7">
@@ -166,6 +136,14 @@
                                     <navigationItem title="TwitchTV" id="bLh-9I-VL5"/>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3R3-Oh-Fcw">
+                                <rect key="frame" x="164" y="164" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="testss:" destination="poj-hl-jec" eventType="touchUpInside" id="EYe-u1-bxl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -175,7 +153,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="75c-8m-t0y"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Twitch" id="f8T-c8-dFU"/>
+                    <tabBarItem key="tabBarItem" title="Twitch" id="AqN-cd-lo8"/>
                     <navigationItem key="navigationItem" id="Yxg-jN-rwZ"/>
                     <connections>
                         <outlet property="testLabel" destination="ABL-HK-isT" id="afS-dd-76i"/>
@@ -183,26 +161,47 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RY4-hz-1jX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3208.8000000000002" y="-441.22938530734638"/>
+            <point key="canvasLocation" x="4014" y="-435"/>
+        </scene>
+        <!--Afreeca-->
+        <scene sceneID="fUQ-Hu-bwi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="y5H-e0-cfU" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Afreeca" image="AFLOGO" id="y4D-lJ-pA7"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sEa-KI-hzK">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.027450980392156862" green="0.23921568627450979" blue="0.65490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sh1-9D-eZO" kind="relationship" relationship="rootViewController" id="DCo-em-WYR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9jH-QB-ekJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3208.8000000000002" y="279.31034482758622"/>
         </scene>
         <!--Tab Bar Controller-->
-        <scene sceneID="pkk-qd-Lou">
+        <scene sceneID="bSP-06-3VY">
             <objects>
-                <tabBarController storyboardIdentifier="TwitchViewController" automaticallyAdjustsScrollViewInsets="NO" id="9ZQ-tM-FB5" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TwitchViewController" automaticallyAdjustsScrollViewInsets="NO" id="3xr-dr-B1Z" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ngd-Fk-xKo">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ngF-ky-EqE">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="poj-hl-jec" kind="relationship" relationship="viewControllers" id="1Bt-4a-Xhi"/>
-                        <segue destination="sh1-9D-eZO" kind="relationship" relationship="viewControllers" id="9BF-DT-90U"/>
+                        <segue destination="poj-hl-jec" kind="relationship" relationship="viewControllers" id="D6e-hl-Cvc"/>
+                        <segue destination="y5H-e0-cfU" kind="relationship" relationship="viewControllers" id="Syp-7D-jMq"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9mz-9X-AbT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c3i-r3-cHb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2269.5999999999999" y="-441.22938530734638"/>
+            <point key="canvasLocation" x="3209" y="-435"/>
         </scene>
     </scenes>
     <resources>

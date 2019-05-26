@@ -34,5 +34,10 @@ class TwitchViewController: UIViewController {
     func setupInitiailize() {
         self.navigationController?.navigationBar.isHidden = true
     }
-
+    
+    
+    @IBAction func testss(_ sender: Any) {
+        try! Auth.auth().signOut()
+    }
+    
 }

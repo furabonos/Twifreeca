@@ -32,6 +32,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let initialViewController = storyboard.instantiateViewController(withIdentifier: "TwitchViewController")
             appDelegate.window?.rootViewController = initialViewController
             appDelegate.window?.makeKeyAndVisible()
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let root = storyboard.instantiateViewController(withIdentifier: "TwitchViewController")
+//            var nvc = UINavigationController(rootViewController: root)
+//
+//
+//            window?.rootViewController = nvc
+//
+//            window?.makeKeyAndVisible()
         }else {
             print("nonononononononononononononononono")
         }
