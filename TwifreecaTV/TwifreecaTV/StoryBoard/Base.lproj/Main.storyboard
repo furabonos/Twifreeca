@@ -61,10 +61,10 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.18823529411764706" green="0.38431372549019605" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="1fd-0N-5u3" firstAttribute="leading" secondItem="pxD-d6-Dfb" secondAttribute="leading" constant="8" id="A07-vl-Aqx"/>
-                                    <constraint firstAttribute="bottom" secondItem="1fd-0N-5u3" secondAttribute="bottom" constant="15" id="XcT-tm-zek"/>
-                                    <constraint firstItem="1fd-0N-5u3" firstAttribute="top" secondItem="pxD-d6-Dfb" secondAttribute="top" constant="15" id="cUO-X5-EVi"/>
-                                    <constraint firstAttribute="trailing" secondItem="1fd-0N-5u3" secondAttribute="trailing" constant="8" id="sUm-6X-DAC"/>
+                                    <constraint firstAttribute="bottom" secondItem="1fd-0N-5u3" secondAttribute="bottom" constant="15" id="2eH-2y-FI6"/>
+                                    <constraint firstItem="1fd-0N-5u3" firstAttribute="top" secondItem="pxD-d6-Dfb" secondAttribute="top" constant="15" id="9Y9-rP-myj"/>
+                                    <constraint firstItem="1fd-0N-5u3" firstAttribute="leading" secondItem="pxD-d6-Dfb" secondAttribute="leading" constant="8" id="UKp-fc-LdA"/>
+                                    <constraint firstAttribute="trailing" secondItem="1fd-0N-5u3" secondAttribute="trailing" constant="8" id="XhK-ds-Cpm"/>
                                     <constraint firstAttribute="height" constant="60" id="txh-yo-F6J"/>
                                 </constraints>
                             </view>
@@ -99,6 +99,7 @@
                     <connections>
                         <outlet property="collectionView" destination="WZL-s2-UL0" id="2U6-MW-bDX"/>
                         <outlet property="searchTextField" destination="1fd-0N-5u3" id="ncm-gC-KPV"/>
+                        <outlet property="textView" destination="pxD-d6-Dfb" id="zQ7-jM-zkI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aKs-tm-HNV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -191,6 +192,7 @@
                 <tabBarController storyboardIdentifier="TwitchViewController" automaticallyAdjustsScrollViewInsets="NO" id="3xr-dr-B1Z" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ngF-ky-EqE">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

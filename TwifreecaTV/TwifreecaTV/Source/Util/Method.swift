@@ -11,6 +11,7 @@ import UIKit
 enum alertTypes {
     case RegisterError
     case RegisterSuccess
+    case SearchError
 }
 
 class Method: NSObject {
@@ -23,6 +24,11 @@ class Method: NSObject {
             return alertController
         case .RegisterSuccess:
             let alertController = UIAlertController(title: "알림",message: "회원가입에 성공했습니다.", preferredStyle: UIAlertController.Style.alert)
+            let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.cancel, handler: nil)
+            alertController.addAction(cancelButton)
+            return alertController
+        case .SearchError:
+            let alertController = UIAlertController(title: "알림",message: "검색어를 한글자 이상 입력해주세요.", preferredStyle: UIAlertController.Style.alert)
             let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.cancel, handler: nil)
             alertController.addAction(cancelButton)
             return alertController

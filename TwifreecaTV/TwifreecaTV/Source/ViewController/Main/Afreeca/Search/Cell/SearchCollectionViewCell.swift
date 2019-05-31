@@ -8,11 +8,19 @@
 
 import UIKit
 
+protocol CellDelegate: class {
+    func addDatabase(cell: SearchCollectionViewCell)
+}
+
 class SearchCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var bjNameLabel: UILabel!
     @IBOutlet weak var bjProfileImageView: UIImageView!
     @IBOutlet weak var broadcastMent: UILabel!
+    @IBOutlet weak var broadcastName: UILabel!
+    @IBOutlet weak var addBtn: UIButton!
+    
+    weak var delegate: CellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,6 +30,10 @@ class SearchCollectionViewCell: UICollectionViewCell {
     func setupInitialize() {
         broadcastMent.adjustsFontSizeToFitWidth = true
     }
-
+    
+    @IBAction func addBtn(_ sender: Any) {
+        delegate?.addDatabase(cell: self)
+    }
+    
 }
      

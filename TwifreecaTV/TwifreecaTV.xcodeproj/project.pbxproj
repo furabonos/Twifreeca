@@ -15,6 +15,7 @@
 		56B5479822967C1C00BB21CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56B5479722967C1C00BB21CB /* Assets.xcassets */; };
 		56B5479D22968FB800BB21CB /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5479B22968FB800BB21CB /* SearchCollectionViewCell.swift */; };
 		56B5479E22968FB800BB21CB /* SearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56B5479C22968FB800BB21CB /* SearchCollectionViewCell.xib */; };
+		56B547A0229BBE4800BB21CB /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5479F229BBE4800BB21CB /* Extension.swift */; };
 		56E478FE2292353C004640C3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E478FD2292353C004640C3 /* LoginViewController.swift */; };
 		56E4790822924C09004640C3 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56E4790722924C09004640C3 /* Register.storyboard */; };
 		56E4790A22924D7A004640C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56E4790922924D7A004640C3 /* GoogleService-Info.plist */; };
@@ -41,6 +42,7 @@
 		56B5479722967C1C00BB21CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56B5479B22968FB800BB21CB /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		56B5479C22968FB800BB21CB /* SearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCollectionViewCell.xib; sourceTree = "<group>"; };
+		56B5479F229BBE4800BB21CB /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		56E478FD2292353C004640C3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		56E4790722924C09004640C3 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		56E4790922924D7A004640C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				56E479102293932F004640C3 /* Method.swift */,
 				56E4791F2293E03D004640C3 /* MoveToStoryboard.swift */,
 				56B5478F2295217800BB21CB /* API.swift */,
+				56B5479F229BBE4800BB21CB /* Extension.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				56E4791322939941004640C3 /* Singleton.swift in Sources */,
 				56E4791E22939DE2004640C3 /* AfreecaViewController.swift in Sources */,
 				56E479112293932F004640C3 /* Method.swift in Sources */,
+				56B547A0229BBE4800BB21CB /* Extension.swift in Sources */,
 				56E4791A22939CE2004640C3 /* TwitchViewController.swift in Sources */,
 				56B5478E2295204300BB21CB /* AfreecaSearchService.swift in Sources */,
 				56B547902295217800BB21CB /* API.swift in Sources */,
@@ -539,7 +543,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9UT8US6W3V;
+				DEVELOPMENT_TEAM = G6DKSMCWLJ;
 				INFOPLIST_FILE = "$(SRCROOT)/TwifreecaTV/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -558,7 +562,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9UT8US6W3V;
+				DEVELOPMENT_TEAM = G6DKSMCWLJ;
 				INFOPLIST_FILE = "$(SRCROOT)/TwifreecaTV/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
