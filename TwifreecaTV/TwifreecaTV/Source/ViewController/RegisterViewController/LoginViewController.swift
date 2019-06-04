@@ -49,6 +49,8 @@ class LoginViewController: UIViewController {
         Auth.auth().signIn(withEmail: emails, password: passwords) { (user, error) in
             if user != nil {
                 //로그인 성공
+                guard let uid = user?.user.uid else { return }
+                UserSingleton.shared.uid = uid
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let newViewController = storyBoard.instantiateViewController(withIdentifier: "TwitchViewController")
                 self.navigationController?.pushViewController(newViewController, animated: true)

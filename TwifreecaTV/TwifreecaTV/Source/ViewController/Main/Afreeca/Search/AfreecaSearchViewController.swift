@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 import Kingfisher
 import NVActivityIndicatorView
+import Firebase
 
 class AfreecaSearchViewController: UIViewController {
     
@@ -21,6 +22,8 @@ class AfreecaSearchViewController: UIViewController {
     
     var searchData: [BjListInfo?] = []
     private let afreecaService: AfreecaSearchType = AfreecaSearchService()
+    
+    
     
      lazy var cancelBtn: UIButton = {
        var btn = UIButton()
@@ -40,7 +43,30 @@ class AfreecaSearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupInitialize()
+        checkBJ(checkName: "서준석(gotkdlzh)")
+    }
+    
+    func checkBJ(checkName: String) {
+        var rere = String()
+        var nameArr = Array<String>()
         
+        let afreecaRef = Database.database().reference().child((Auth.auth().currentUser?.uid)!).child("Afreeca")
+        afreecaRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let dictionaries = snapshot.value as? [String: Any] else { return }
+            dictionaries.forEach({ (key, value) in
+                guard let dictionary = value as? [String: Any] else { return }
+                let username = dictionary["name"] as! String
+                nameArr.append(username)
+            })
+            if nameArr.contains(checkName) {
+                print("YYYYYYYess")
+                rere = "ffff"
+            }else {
+                rere = "zzzz"
+                print("NNNNNNNNNNNNo")
+            }
+        })
+        print("rere = \(rere)")
     }
     
     func setupInitialize() {
@@ -167,16 +193,6 @@ extension AfreecaSearchViewController: UITextFieldDelegate {
 
 extension AfreecaSearchViewController: UICollectionViewDataSource {
     
-//    func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        return 1
-//    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let bjName = searchData[indexPath.row]?.bjname else { return }
-        guard let bjId = searchData[indexPath.row]?.bjid else { return }
-        guard let profileUrl = searchData[indexPath.row]?.profileurl else { return }
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
@@ -201,13 +217,44 @@ extension AfreecaSearchViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: view.frame.width, height: 125)
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-//            return CGSize(width: view.frame.width, height: 250)
-//    }
 }
 
 extension AfreecaSearchViewController: CellDelegate {
     func addDatabase(cell: SearchCollectionViewCell) {
-        print(searchData[cell.addBtn.tag]?.bjname)
+        guard let bjName = searchData[cell.addBtn.tag]?.bjname else { return }
+        guard let bjId = searchData[cell.addBtn.tag]?.bjid else { return }
+        guard let profileUrl = searchData[cell.addBtn.tag]?.profileurl else { return }
+        var nameArr = Array<String>()
+        
+        let afreecaRef = Database.database().reference().child((Auth.auth().currentUser?.uid)!).child("Afreeca")
+        afreecaRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let dictionaries = snapshot.value as? [String: Any] else { return }
+            dictionaries.forEach({ (key, value) in
+                guard let dictionary = value as? [String: Any] else { return }
+                let username = dictionary["name"] as! String
+                nameArr.append(username)
+            })
+            if nameArr.contains(bjName) {
+                self.present(Method.alert(type: .FollowOverlap), animated: true)
+                
+            }else {
+                let afreecaRefs = Database.database().reference().child((Auth.auth().currentUser?.uid)!)
+                let ref = afreecaRefs.child("Afreeca").child(bjName)
+                let values = ["name": bjName,
+                              "id": bjId,
+                              "profileurl": profileUrl] as [String: Any]
+                afreecaRef.updateChildValues(values){ (err, ref) in
+                    if let err = err {
+                        //실패
+                        self.present(Method.alert(type: .FollowError), animated: true)
+                    }
+                    //성공
+                    self.present(Method.alert(type: .FollowSuccess), animated: true)
+                }
+                
+            }
+        })
+        
+        
     }
 }
