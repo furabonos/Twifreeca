@@ -17,7 +17,11 @@ class AfreecaCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        setupInitialize()
+    }
+    
+    func setupInitialize() {
+        broadcastLabel.adjustsFontSizeToFitWidth = true
     }
 
 }

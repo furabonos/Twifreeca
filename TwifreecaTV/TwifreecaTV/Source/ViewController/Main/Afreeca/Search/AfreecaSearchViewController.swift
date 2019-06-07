@@ -243,7 +243,7 @@ extension AfreecaSearchViewController: CellDelegate {
                 let values = ["name": bjName,
                               "id": bjId,
                               "profileurl": profileUrl] as [String: Any]
-                afreecaRef.updateChildValues(values){ (err, ref) in
+                ref.updateChildValues(values){ (err, ref) in
                     if let err = err {
                         //실패
                         self.present(Method.alert(type: .FollowError), animated: true)

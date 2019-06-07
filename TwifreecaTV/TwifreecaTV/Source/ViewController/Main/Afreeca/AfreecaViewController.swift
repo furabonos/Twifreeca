@@ -120,12 +120,15 @@ class AfreecaViewController: UIViewController {
         })
         
     }
-    func checkLive(name: String, completion: @escaping (String) ->  ()){
-        
+    func checkLive(name: String, completion: @escaping (Array<String>) ->  ()){
+        var resultArr = Array<String>()
         afreecaService.liveAfreecaBJ(name: name) { (result) in
             switch result {
             case .success(let value):
-                completion(value.streamNow)
+                resultArr.append(value.streamNow)
+                resultArr.append(value.streamTitle)
+                resultArr.append(value.streamImg)
+                completion(resultArr)
             case .failure(let error):
                 print(error)
             }
@@ -159,12 +162,17 @@ extension AfreecaViewController: UICollectionViewDataSource {
         if self.nameArr.count > 0 {
             cell.bjLabel.text = self.nameArr[indexPath.row]
             checkLive(name: self.idArr[indexPath.row]) { (result) in
-                switch result {
+                switch result[0] {
                 case "ON":
                     cell.onOffLabel.text = "onAir"
+                    cell.onOffLabel.backgroundColor = .red
+                    cell.onOffLabel.textColor = .white
+                    cell.broadcastLabel.text = result[1]
+
                 case "OFF":
                     cell.onOffLabel.text = "OFF"
                     cell.bjImageView.kf.setImage(with: URL(string: self.makeURL(urls: self.urlArr[indexPath.row])))
+                    cell.broadcastLabel.text = "현재 방송중이지 않습니다."
                 default:
                     break
                 }
