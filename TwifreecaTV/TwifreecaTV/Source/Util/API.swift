@@ -9,5 +9,6 @@
 import Foundation
 
 struct API {
-    static let URL = "http://0.0.0.0:5001/bjlist"
+    static let searchURL = "http://0.0.0.0:5001/bjlist"
+    static let liveURL = "http://0.0.0.0:5006/nowsss"
 }

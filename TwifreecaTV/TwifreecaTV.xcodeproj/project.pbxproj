@@ -18,6 +18,8 @@
 		56B547A0229BBE4800BB21CB /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5479F229BBE4800BB21CB /* Extension.swift */; };
 		56B547C222A653F100BB21CB /* AfreecaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B547C022A653F100BB21CB /* AfreecaCollectionViewCell.swift */; };
 		56B547C322A653F100BB21CB /* AfreecaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56B547C122A653F100BB21CB /* AfreecaCollectionViewCell.xib */; };
+		56C1CDD422A9FE6600EF4589 /* AfreecaFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C1CDD322A9FE6600EF4589 /* AfreecaFirebase.swift */; };
+		56C1CDD622AA077200EF4589 /* AfreecaLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C1CDD522AA077200EF4589 /* AfreecaLive.swift */; };
 		56E478FE2292353C004640C3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E478FD2292353C004640C3 /* LoginViewController.swift */; };
 		56E4790822924C09004640C3 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56E4790722924C09004640C3 /* Register.storyboard */; };
 		56E4790A22924D7A004640C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56E4790922924D7A004640C3 /* GoogleService-Info.plist */; };
@@ -47,6 +49,8 @@
 		56B5479F229BBE4800BB21CB /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		56B547C022A653F100BB21CB /* AfreecaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfreecaCollectionViewCell.swift; sourceTree = "<group>"; };
 		56B547C122A653F100BB21CB /* AfreecaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AfreecaCollectionViewCell.xib; sourceTree = "<group>"; };
+		56C1CDD322A9FE6600EF4589 /* AfreecaFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfreecaFirebase.swift; sourceTree = "<group>"; };
+		56C1CDD522AA077200EF4589 /* AfreecaLive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfreecaLive.swift; sourceTree = "<group>"; };
 		56E478FD2292353C004640C3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		56E4790722924C09004640C3 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		56E4790922924D7A004640C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -244,6 +248,8 @@
 				56E4791222939941004640C3 /* Singleton.swift */,
 				56B5478922951FE300BB21CB /* Result.swift */,
 				56B5478B2295201300BB21CB /* AfreecaSearch.swift */,
+				56C1CDD322A9FE6600EF4589 /* AfreecaFirebase.swift */,
+				56C1CDD522AA077200EF4589 /* AfreecaLive.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -399,6 +405,7 @@
 				56E4790F2292829F004640C3 /* Regex.swift in Sources */,
 				56B547922295262700BB21CB /* AfreecaSearchViewController.swift in Sources */,
 				56E478FE2292353C004640C3 /* LoginViewController.swift in Sources */,
+				56C1CDD622AA077200EF4589 /* AfreecaLive.swift in Sources */,
 				56E4791322939941004640C3 /* Singleton.swift in Sources */,
 				56E4791E22939DE2004640C3 /* AfreecaViewController.swift in Sources */,
 				56E479112293932F004640C3 /* Method.swift in Sources */,
@@ -409,6 +416,7 @@
 				56E479202293E03D004640C3 /* MoveToStoryboard.swift in Sources */,
 				56B547C222A653F100BB21CB /* AfreecaCollectionViewCell.swift in Sources */,
 				874A415222912B0B003B0363 /* AppDelegate.swift in Sources */,
+				56C1CDD422A9FE6600EF4589 /* AfreecaFirebase.swift in Sources */,
 				56B5478A22951FE300BB21CB /* Result.swift in Sources */,
 				56B5478C2295201300BB21CB /* AfreecaSearch.swift in Sources */,
 				56B5479D22968FB800BB21CB /* SearchCollectionViewCell.swift in Sources */,

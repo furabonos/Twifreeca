@@ -11,6 +11,7 @@ import Alamofire
 
 protocol AfreecaSearchType {
     func searchAfreecaBJ(name: String, completion: @escaping(Result<AfreecaSearch>) -> ())
+    func liveAfreecaBJ(name: String, completion: @escaping(Result<AfreecaLiveInfo>) -> ())
 }
 
 struct AfreecaSearchService: AfreecaSearchType {
@@ -30,7 +31,7 @@ struct AfreecaSearchService: AfreecaSearchType {
             "name": name
         ]
         
-        AfreecaSearchService.manager.request(API.URL, method: .post, parameters: parameters)
+        AfreecaSearchService.manager.request(API.searchURL, method: .post, parameters: parameters)
             .validate().responseData{ response in
                 switch response.result{
                 case .success(let value):
@@ -38,6 +39,30 @@ struct AfreecaSearchService: AfreecaSearchType {
 //                        print("fdsfsdfds")
                         let decodableValue = try JSONDecoder().decode(AfreecaSearch.self, from: value)
 //                        print("aa = \(decodableValue)")
+                        completion(Result.success(decodableValue))
+                    }catch {
+                        
+                    }
+                case .failure(let error):
+                    print("error = \(error)")
+                    completion(.failure(nil, error))
+                }
+        }
+    }
+    
+    func liveAfreecaBJ(name: String, completion: @escaping (Result<AfreecaLiveInfo>) -> ()) {
+        var parameters = [
+            "name": name
+        ]
+        
+        AfreecaSearchService.manager.request(API.liveURL, method: .post, parameters: parameters)
+            .validate().responseData{ response in
+                switch response.result{
+                case .success(let value):
+                    do {
+                        //                        print("fdsfsdfds")
+                        let decodableValue = try JSONDecoder().decode(AfreecaLiveInfo.self, from: value)
+                        //                        print("aa = \(decodableValue)")
                         completion(Result.success(decodableValue))
                     }catch {
                         

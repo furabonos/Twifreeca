@@ -10,6 +10,11 @@ import UIKit
 
 class AfreecaCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var bjLabel: UILabel!
+    @IBOutlet weak var bjImageView: UIImageView!
+    @IBOutlet weak var onOffLabel: UILabel!
+    @IBOutlet weak var broadcastLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

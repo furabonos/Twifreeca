@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import SnapKit
 import Kingfisher
+import NVActivityIndicatorView
 
 class AfreecaViewController: UIViewController {
 
@@ -30,13 +31,20 @@ class AfreecaViewController: UIViewController {
         return label
     }()
     
+    private var activityView: NVActivityIndicatorView!
+    private let afreecaService: AfreecaSearchType = AfreecaSearchService()
+    
+    
     var nameArr = Array<String>()
     var idArr = Array<String>()
     var urlArr = Array<String>()
     
+    var onOff = String()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //AfreecaCollectionViewCell
+//        setupInitialize()
         collectionView.register(
             UINib(nibName: "AfreecaCollectionViewCell", bundle: nil),
             forCellWithReuseIdentifier: "AfreecaCollectionViewCell"
@@ -47,10 +55,21 @@ class AfreecaViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setupInitialize()
+        fetchBjData()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        self.nameArr.removeAll()
+        self.idArr.removeAll()
+        self.urlArr.removeAll()
     }
     
     func setupInitialize() {
-        fetchBjData()
+        setupActivityIndicator()
+        
+        backgroundImageView.isHidden = true
+        followLabel.isHidden = true
         
         view.addSubview(backgroundImageView)
         backgroundImageView.snp.makeConstraints { (m) in
@@ -69,22 +88,10 @@ class AfreecaViewController: UIViewController {
             m.centerX.equalTo(view.snp.centerX)
         }
         
-        if self.nameArr.count == 0 {
-            self.collectionView.isHidden = true
-            self.backgroundImageView.isHidden = false
-            self.followLabel.isHidden = false
-        }else {
-            self.collectionView.isHidden = false
-            self.backgroundImageView.isHidden = true
-            self.followLabel.isHidden = true
-        }
-        
     }
     
     func fetchBjData() {
-        var rere = String()
-//        var nameArr = Array<String>()
-        
+//        self.activityView.startAnimating()
         let afreecaRef = Database.database().reference().child((Auth.auth().currentUser?.uid)!).child("Afreeca")
         afreecaRef.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let dictionaries = snapshot.value as? [String: Any] else { return }
@@ -98,9 +105,44 @@ class AfreecaViewController: UIViewController {
                 self.idArr.append(bjId)
                 self.urlArr.append(profileUrl)
             })
-            
+            if self.nameArr.count == 0 {
+                self.collectionView.isHidden = true
+                self.backgroundImageView.isHidden = false
+                self.followLabel.isHidden = false
+            }else {
+                self.collectionView.isHidden = false
+                self.backgroundImageView.isHidden = true
+                self.followLabel.isHidden = true
+            }
+            self.collectionView.reloadData()
+            print(self.urlArr)
+//            self.activityView.stopAnimating()
         })
         
+    }
+    func checkLive(name: String, completion: @escaping (String) ->  ()){
+        
+        afreecaService.liveAfreecaBJ(name: name) { (result) in
+            switch result {
+            case .success(let value):
+                completion(value.streamNow)
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
+    }
+    
+    private func setupActivityIndicator() {
+        activityView = NVActivityIndicatorView(frame: CGRect(x: self.view.center.x - 50, y: self.view.center.y - 50, width: 100, height: 100), type: NVActivityIndicatorType.ballBeat, color: UIColor(red: 0/255.0, green: 132/255.0, blue: 137/255.0, alpha: 1), padding: 25)
+        
+        activityView.backgroundColor = .white
+        activityView.layer.cornerRadius = 10
+        self.collectionView.addSubview(activityView)
+    }
+    
+    func makeURL(urls: String) -> String {
+        return "http://\(urls)"
     }
     
 }
@@ -108,19 +150,36 @@ class AfreecaViewController: UIViewController {
 extension AfreecaViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return self.nameArr.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AfreecaCollectionViewCell", for: indexPath) as! AfreecaCollectionViewCell
        
+        if self.nameArr.count > 0 {
+            cell.bjLabel.text = self.nameArr[indexPath.row]
+            checkLive(name: self.idArr[indexPath.row]) { (result) in
+                switch result {
+                case "ON":
+                    cell.onOffLabel.text = "onAir"
+                case "OFF":
+                    cell.onOffLabel.text = "OFF"
+                    cell.bjImageView.kf.setImage(with: URL(string: self.makeURL(urls: self.urlArr[indexPath.row])))
+                default:
+                    break
+                }
+            }
+//            cell.bjLabel.text = self.nameArr[indexPath.row]
+//            cell.bjImageView.kf.setImage(with: URL(string: makeURL(urls: self.urlArr[indexPath.row])))
+        }
+        
         return cell
     }
 }
 
 extension AfreecaViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 125)
+        return CGSize(width: view.frame.width, height: 135)
     }
     
 }
