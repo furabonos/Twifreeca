@@ -12,6 +12,7 @@ pod 'Kingfisher'
 pod 'Alamofire'
 pod 'SnapKit'
 pod 'NVActivityIndicatorView'
+pod 'MarqueeLabel'
 
   # Pods for TwifreecaTV
 

@@ -160,6 +160,8 @@ extension AfreecaViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AfreecaCollectionViewCell", for: indexPath) as! AfreecaCollectionViewCell
        
         if self.nameArr.count > 0 {
+            cell.delegate = self
+            cell.delBtn.tag = indexPath.row
             cell.bjLabel.text = self.nameArr[indexPath.row]
             checkLive(name: self.idArr[indexPath.row]) { (result) in
                 switch result[0] {
@@ -167,12 +169,17 @@ extension AfreecaViewController: UICollectionViewDataSource {
                     cell.onOffLabel.text = "onAir"
                     cell.onOffLabel.backgroundColor = .red
                     cell.onOffLabel.textColor = .white
-                    cell.broadcastLabel.text = result[1]
+//                    cell.broadcastLabel.text = result[1]
+                    cell.broadcastLabel.isHidden = true
+                    cell.mrLabel.text = result[1]
+                    cell.bjImageView.kf.setImage(with: URL(string: self.makeURL(urls: result[2])))
 
                 case "OFF":
                     cell.onOffLabel.text = "OFF"
                     cell.bjImageView.kf.setImage(with: URL(string: self.makeURL(urls: self.urlArr[indexPath.row])))
-                    cell.broadcastLabel.text = "현재 방송중이지 않습니다."
+//                    cell.broadcastLabel.text = "현재 방송중이지 않습니다."
+                    cell.broadcastLabel.isHidden = true
+                    cell.mrLabel.text = "현재 방송중이지 않습니다."
                 default:
                     break
                 }
@@ -190,4 +197,18 @@ extension AfreecaViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: view.frame.width, height: 135)
     }
     
+}
+
+extension AfreecaViewController: DeleteBjDelegate {
+    func delDatabase(cell: AfreecaCollectionViewCell) {
+        let afreecaRef = Database.database().reference().child((Auth.auth().currentUser?.uid)!).child("Afreeca").child("\(self.nameArr[cell.delBtn.tag])")
+        afreecaRef.removeValue()
+        self.present(Method.alert(type: .DelSuccess), animated: true, completion: {
+            self.nameArr.removeAll()
+            self.idArr.removeAll()
+            self.urlArr.removeAll()
+            self.fetchBjData()
+        })
+        
+    }
 }

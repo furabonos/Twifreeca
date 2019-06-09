@@ -70,6 +70,9 @@ PODS:
   - GTMSessionFetcher/Core (1.2.1)
   - Kingfisher (5.2.0)
   - leveldb-library (1.20)
+  - MarqueeLabel (3.2.0):
+    - MarqueeLabel/ObjC (= 3.2.0)
+  - MarqueeLabel/ObjC (3.2.0)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -87,6 +90,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - Kingfisher
+  - MarqueeLabel
   - NVActivityIndicatorView
   - SnapKit
 
@@ -106,6 +110,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - Kingfisher
     - leveldb-library
+    - MarqueeLabel
     - nanopb
     - NVActivityIndicatorView
     - SnapKit
@@ -125,10 +130,11 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   Kingfisher: 07067cfacf371117330dceb4b4b8f5c4b691ab42
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
+  MarqueeLabel: 440a502b91a9179bd98f9fff00ba1150650a1c0e
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   NVActivityIndicatorView: 4ca19fccc84595a78957336a086d00a49be6ce61
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: da31810008ccd21828be5d017091b4f91183a3c7
+PODFILE CHECKSUM: e0148f4d61b1a43fd83c40a53ff1228e19954b13
 
 COCOAPODS: 1.5.3

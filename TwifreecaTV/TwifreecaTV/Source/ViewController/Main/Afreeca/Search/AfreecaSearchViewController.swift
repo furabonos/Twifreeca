@@ -19,6 +19,7 @@ class AfreecaSearchViewController: UIViewController {
     @IBOutlet weak var searchTextField: UITextField!
     
     private var activityView: NVActivityIndicatorView!
+    private var refreshController = UIRefreshControl()
     
     var searchData: [BjListInfo?] = []
     private let afreecaService: AfreecaSearchType = AfreecaSearchService()
@@ -77,6 +78,8 @@ class AfreecaSearchViewController: UIViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.refreshControl = refreshController
+        refreshController.addTarget(self, action: #selector(refresh), for: .valueChanged)
         collectionView.register(
             UINib(nibName: "SearchCollectionViewCell", bundle: nil),
             forCellWithReuseIdentifier: "SearchCollectionViewCell"
@@ -102,6 +105,11 @@ class AfreecaSearchViewController: UIViewController {
         }
         
         setupActivityIndicator()
+    }
+    
+    @objc func refresh() {
+        print("rererererererererererererererererer")
+        self.refreshController.endRefreshing()
     }
     
     private func setupActivityIndicator() {

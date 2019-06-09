@@ -15,6 +15,7 @@ enum alertTypes {
     case FollowSuccess
     case FollowError
     case FollowOverlap
+    case DelSuccess
 }
 
 class Method: NSObject {
@@ -47,6 +48,11 @@ class Method: NSObject {
             return alertController
         case .FollowOverlap:
             let alertController = UIAlertController(title: "알림",message: "이미 추가된 BJ입니다.", preferredStyle: UIAlertController.Style.alert)
+            let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.cancel, handler: nil)
+            alertController.addAction(cancelButton)
+            return alertController
+        case .DelSuccess:
+            let alertController = UIAlertController(title: "알림",message: "삭제되었습니다.", preferredStyle: UIAlertController.Style.alert)
             let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.cancel, handler: nil)
             alertController.addAction(cancelButton)
             return alertController
