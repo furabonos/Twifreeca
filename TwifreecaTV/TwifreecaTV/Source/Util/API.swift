@@ -9,6 +9,18 @@
 import Foundation
 
 struct API {
+    
     static let searchURL = "http://0.0.0.0:5001/bjlist"
     static let liveURL = "http://0.0.0.0:5006/nowsss"
+    
+    static let twitchURL = "https://api.twitch.tv/helix"
+    
+    struct Afreeca {
+        
+    }
+    
+    struct Twitch {
+        static let twitchSearchURL = "\(twitchURL)/users"
+        static let twitchVideoURL = "\(twitchURL)/videos"
+    }
 }

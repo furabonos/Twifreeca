@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 import MarqueeLabel
+import AMShimmer
 
 protocol DeleteBjDelegate: class {
     func delDatabase(cell: AfreecaCollectionViewCell)
@@ -47,6 +48,13 @@ class AfreecaCollectionViewCell: UICollectionViewCell {
             m.top.equalTo(broadcastLabel.snp.top)
             m.left.equalTo(broadcastLabel.snp.left)
         }
+        
+        AMShimmer.start(for: bjLabel)
+        AMShimmer.start(for: bjImageView)
+        AMShimmer.start(for: broadcastLabel)
+        AMShimmer.start(for: onOffLabel)
+        
+        delBtn.isHidden = true
     }
     
     @IBAction func delBJ(_ sender: Any) {

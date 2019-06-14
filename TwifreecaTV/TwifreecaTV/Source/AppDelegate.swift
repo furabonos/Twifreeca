@@ -13,33 +13,23 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
-    
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         
         if Auth.auth().currentUser != nil {
-//            var mainView: UIStoryboard!
-//            mainView = UIStoryboard(name: "Main", bundle: nil)
-//            let viewcontroller :  TwitchViewController = mainView.instantiateViewController(withIdentifier: "TwitchViewController") as! TwitchViewController
-//            self.window!.rootViewController = viewcontroller
-//            self.window?.makeKeyAndVisible();
             let appDelegate = UIApplication.shared.delegate! as! AppDelegate
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let initialViewController = storyboard.instantiateViewController(withIdentifier: "TwitchViewController")
             appDelegate.window?.rootViewController = initialViewController
-            appDelegate.window?.makeKeyAndVisible()
+
 //            let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //            let root = storyboard.instantiateViewController(withIdentifier: "TwitchViewController")
 //            var nvc = UINavigationController(rootViewController: root)
-//
-//
 //            window?.rootViewController = nvc
-//
-//            window?.makeKeyAndVisible()
+            
+            window?.makeKeyAndVisible()
         }else {
             print("nonononononononononononononononono")
         }

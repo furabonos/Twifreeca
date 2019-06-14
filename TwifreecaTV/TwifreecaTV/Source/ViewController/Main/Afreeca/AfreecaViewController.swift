@@ -11,6 +11,7 @@ import Firebase
 import SnapKit
 import Kingfisher
 import NVActivityIndicatorView
+import AMShimmer
 
 class AfreecaViewController: UIViewController {
 
@@ -49,7 +50,6 @@ class AfreecaViewController: UIViewController {
             UINib(nibName: "AfreecaCollectionViewCell", bundle: nil),
             forCellWithReuseIdentifier: "AfreecaCollectionViewCell"
         )
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -162,10 +162,11 @@ extension AfreecaViewController: UICollectionViewDataSource {
         if self.nameArr.count > 0 {
             cell.delegate = self
             cell.delBtn.tag = indexPath.row
-            cell.bjLabel.text = self.nameArr[indexPath.row]
+//            cell.bjLabel.text = self.nameArr[indexPath.row]
             checkLive(name: self.idArr[indexPath.row]) { (result) in
                 switch result[0] {
                 case "ON":
+                    print("fdfsdfsdfsdfsdfsd = \(result[2])")
                     cell.onOffLabel.text = "onAir"
                     cell.onOffLabel.backgroundColor = .red
                     cell.onOffLabel.textColor = .white
@@ -173,6 +174,7 @@ extension AfreecaViewController: UICollectionViewDataSource {
                     cell.broadcastLabel.isHidden = true
                     cell.mrLabel.text = result[1]
                     cell.bjImageView.kf.setImage(with: URL(string: self.makeURL(urls: result[2])))
+//                    cell.bjImageView.kf.setImage(with: URL(string: "http://liveimg.afreecatv.com/214770318.jpg"))
 
                 case "OFF":
                     cell.onOffLabel.text = "OFF"
@@ -183,6 +185,11 @@ extension AfreecaViewController: UICollectionViewDataSource {
                 default:
                     break
                 }
+                cell.bjLabel.text = self.nameArr[indexPath.row]
+                cell.delBtn.isHidden = false
+                AMShimmer.stop(for: cell.bjImageView)
+                AMShimmer.stop(for: cell.onOffLabel)
+                AMShimmer.stop(for: cell.bjLabel)
             }
 //            cell.bjLabel.text = self.nameArr[indexPath.row]
 //            cell.bjImageView.kf.setImage(with: URL(string: makeURL(urls: self.urlArr[indexPath.row])))

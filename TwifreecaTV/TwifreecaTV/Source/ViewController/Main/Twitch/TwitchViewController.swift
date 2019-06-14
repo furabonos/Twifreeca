@@ -13,12 +13,12 @@ class TwitchViewController: UIViewController {
 
     @IBOutlet weak var testLabel: UILabel!
     
-//    private let afreecaSearch: AfreecaSearchType = AfreecaSearchService()
+    var searchData: [StreamerInfo?] = []
+    private let twitchService: TwitchSearchType = TwitchSearchService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        testLabel.text = Auth.auth().currentUser?.uid
-        
+//        testLabel.text = Auth.auth().currentUser?.uid
         setupInitiailize()
         
 //        afreecaSearch.searchAfreecaBJ(name: "서준석") { (result) in
@@ -29,14 +29,22 @@ class TwitchViewController: UIViewController {
 //                print("errororororor = \(error)")
 //            }
 //        }
+//        twitchService.searchTwitchStreamer(name: "juankorea") { (result) in
+//            switch result {
+//            case .success(let value):
+//                self.searchData = value.data
+//                print("fdsfdsfdsfd = \(self.searchData[0]?.displayName)")
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
     }
     
     func setupInitiailize() {
-        self.navigationController?.navigationBar.isHidden = true
+        
     }
     
-    
-    @IBAction func testss(_ sender: Any) {
+    @IBAction func fdsfsdfsd(_ sender: Any) {
         try! Auth.auth().signOut()
     }
     

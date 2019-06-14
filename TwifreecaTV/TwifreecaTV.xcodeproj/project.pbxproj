@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		569884DF22AF7A37006A5E1E /* TwitchSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569884DE22AF7A37006A5E1E /* TwitchSearchViewController.swift */; };
+		569884E122AF960E006A5E1E /* TwitchSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569884E022AF960E006A5E1E /* TwitchSearch.swift */; };
+		569884E322AF9CA9006A5E1E /* TwitchLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569884E222AF9CA9006A5E1E /* TwitchLive.swift */; };
+		569884E522B0CDEF006A5E1E /* TwitchSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569884E422B0CDEF006A5E1E /* TwitchSearchService.swift */; };
+		569884ED22B1D8CE006A5E1E /* TwitchSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569884EB22B1D8CE006A5E1E /* TwitchSearchCell.swift */; };
+		569884EE22B1D8CE006A5E1E /* TwitchSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 569884EC22B1D8CE006A5E1E /* TwitchSearchCell.xib */; };
+		569884F022B224C5006A5E1E /* TwitchVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569884EF22B224C5006A5E1E /* TwitchVideo.swift */; };
+		569884F722B23F5D006A5E1E /* TwitchHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569884F522B23F5D006A5E1E /* TwitchHeader.swift */; };
+		569884F822B23F5D006A5E1E /* TwitchHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 569884F622B23F5D006A5E1E /* TwitchHeader.xib */; };
 		56B5478A22951FE300BB21CB /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5478922951FE300BB21CB /* Result.swift */; };
 		56B5478C2295201300BB21CB /* AfreecaSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5478B2295201300BB21CB /* AfreecaSearch.swift */; };
 		56B5478E2295204300BB21CB /* AfreecaSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5478D2295204300BB21CB /* AfreecaSearchService.swift */; };
@@ -38,6 +47,15 @@
 
 /* Begin PBXFileReference section */
 		316EC346405B3AA27A6BCB47 /* Pods-TwifreecaTV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwifreecaTV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwifreecaTV/Pods-TwifreecaTV.debug.xcconfig"; sourceTree = "<group>"; };
+		569884DE22AF7A37006A5E1E /* TwitchSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitchSearchViewController.swift; sourceTree = "<group>"; };
+		569884E022AF960E006A5E1E /* TwitchSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitchSearch.swift; sourceTree = "<group>"; };
+		569884E222AF9CA9006A5E1E /* TwitchLive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitchLive.swift; sourceTree = "<group>"; };
+		569884E422B0CDEF006A5E1E /* TwitchSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitchSearchService.swift; sourceTree = "<group>"; };
+		569884EB22B1D8CE006A5E1E /* TwitchSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitchSearchCell.swift; sourceTree = "<group>"; };
+		569884EC22B1D8CE006A5E1E /* TwitchSearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TwitchSearchCell.xib; sourceTree = "<group>"; };
+		569884EF22B224C5006A5E1E /* TwitchVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitchVideo.swift; sourceTree = "<group>"; };
+		569884F522B23F5D006A5E1E /* TwitchHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitchHeader.swift; sourceTree = "<group>"; };
+		569884F622B23F5D006A5E1E /* TwitchHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TwitchHeader.xib; sourceTree = "<group>"; };
 		56B5478922951FE300BB21CB /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		56B5478B2295201300BB21CB /* AfreecaSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfreecaSearch.swift; sourceTree = "<group>"; };
 		56B5478D2295204300BB21CB /* AfreecaSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfreecaSearchService.swift; sourceTree = "<group>"; };
@@ -88,6 +106,26 @@
 				571404B79AC21D56A99FA970 /* Pods_TwifreecaTV.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		569884DD22AF7A0D006A5E1E /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				569884DE22AF7A37006A5E1E /* TwitchSearchViewController.swift */,
+				569884E622B0DFA2006A5E1E /* Cell */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		569884E622B0DFA2006A5E1E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				569884EB22B1D8CE006A5E1E /* TwitchSearchCell.swift */,
+				569884EC22B1D8CE006A5E1E /* TwitchSearchCell.xib */,
+				569884F522B23F5D006A5E1E /* TwitchHeader.swift */,
+				569884F622B23F5D006A5E1E /* TwitchHeader.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		56B5479922968A8D00BB21CB /* Search */ = {
@@ -147,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				56E4791922939CE2004640C3 /* TwitchViewController.swift */,
+				569884DD22AF7A0D006A5E1E /* Search */,
 			);
 			path = Twitch;
 			sourceTree = "<group>";
@@ -250,6 +289,9 @@
 				56B5478B2295201300BB21CB /* AfreecaSearch.swift */,
 				56C1CDD322A9FE6600EF4589 /* AfreecaFirebase.swift */,
 				56C1CDD522AA077200EF4589 /* AfreecaLive.swift */,
+				569884E022AF960E006A5E1E /* TwitchSearch.swift */,
+				569884E222AF9CA9006A5E1E /* TwitchLive.swift */,
+				569884EF22B224C5006A5E1E /* TwitchVideo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -258,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				56B5478D2295204300BB21CB /* AfreecaSearchService.swift */,
+				569884E422B0CDEF006A5E1E /* TwitchSearchService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -337,7 +380,9 @@
 				56E4790A22924D7A004640C3 /* GoogleService-Info.plist in Resources */,
 				874A415722912B0B003B0363 /* Main.storyboard in Resources */,
 				56E4790822924C09004640C3 /* Register.storyboard in Resources */,
+				569884EE22B1D8CE006A5E1E /* TwitchSearchCell.xib in Resources */,
 				56B5479822967C1C00BB21CB /* Assets.xcassets in Resources */,
+				569884F822B23F5D006A5E1E /* TwitchHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,7 +395,8 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-TwifreecaTV/Pods-TwifreecaTV-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-TwifreecaTV/Pods-TwifreecaTV-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AMShimmer/AMShimmer.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
@@ -359,10 +405,10 @@
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AMShimmer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
@@ -371,11 +417,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TwifreecaTV/Pods-TwifreecaTV-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TwifreecaTV/Pods-TwifreecaTV-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		395226B466E9D498767D98F0 /* [CP] Check Pods Manifest.lock */ = {
@@ -404,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56E4790D229255D8004640C3 /* EmailViewController.swift in Sources */,
+				569884F022B224C5006A5E1E /* TwitchVideo.swift in Sources */,
 				56E4790F2292829F004640C3 /* Regex.swift in Sources */,
 				56B547922295262700BB21CB /* AfreecaSearchViewController.swift in Sources */,
 				56E478FE2292353C004640C3 /* LoginViewController.swift in Sources */,
@@ -412,15 +458,21 @@
 				56E4791E22939DE2004640C3 /* AfreecaViewController.swift in Sources */,
 				56E479112293932F004640C3 /* Method.swift in Sources */,
 				56B547A0229BBE4800BB21CB /* Extension.swift in Sources */,
+				569884E522B0CDEF006A5E1E /* TwitchSearchService.swift in Sources */,
+				569884F722B23F5D006A5E1E /* TwitchHeader.swift in Sources */,
+				569884ED22B1D8CE006A5E1E /* TwitchSearchCell.swift in Sources */,
 				56E4791A22939CE2004640C3 /* TwitchViewController.swift in Sources */,
+				569884E322AF9CA9006A5E1E /* TwitchLive.swift in Sources */,
 				56B5478E2295204300BB21CB /* AfreecaSearchService.swift in Sources */,
 				56B547902295217800BB21CB /* API.swift in Sources */,
 				56E479202293E03D004640C3 /* MoveToStoryboard.swift in Sources */,
 				56B547C222A653F100BB21CB /* AfreecaCollectionViewCell.swift in Sources */,
+				569884E122AF960E006A5E1E /* TwitchSearch.swift in Sources */,
 				874A415222912B0B003B0363 /* AppDelegate.swift in Sources */,
 				56C1CDD422A9FE6600EF4589 /* AfreecaFirebase.swift in Sources */,
 				56B5478A22951FE300BB21CB /* Result.swift in Sources */,
 				56B5478C2295201300BB21CB /* AfreecaSearch.swift in Sources */,
+				569884DF22AF7A37006A5E1E /* TwitchSearchViewController.swift in Sources */,
 				56B5479D22968FB800BB21CB /* SearchCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -569,7 +621,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9UT8US6W3V;
+				DEVELOPMENT_TEAM = G6DKSMCWLJ;
 				INFOPLIST_FILE = "$(SRCROOT)/TwifreecaTV/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -588,7 +640,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9UT8US6W3V;
+				DEVELOPMENT_TEAM = G6DKSMCWLJ;
 				INFOPLIST_FILE = "$(SRCROOT)/TwifreecaTV/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

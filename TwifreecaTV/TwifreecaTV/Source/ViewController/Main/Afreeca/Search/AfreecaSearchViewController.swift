@@ -132,7 +132,14 @@ class AfreecaSearchViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        cancelBtn.isHidden = true
         self.view.endEditing(true)
+        searchTextField.snp.remakeConstraints { (m) in
+            m.top.equalTo(textView.snp.top).offset(15)
+            m.right.equalTo(textView.snp.right).offset(8)
+            m.height.equalTo(30)
+            m.left.equalTo(textView.snp.left).offset(8)
+        }
     }
     
     
@@ -202,7 +209,7 @@ extension AfreecaSearchViewController: UITextFieldDelegate {
 extension AfreecaSearchViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return searchData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
