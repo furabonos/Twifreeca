@@ -243,7 +243,22 @@ extension AfreecaSearchViewController: CellDelegate {
         
         let afreecaRef = Database.database().reference().child((Auth.auth().currentUser?.uid)!).child("Afreeca")
         afreecaRef.observeSingleEvent(of: .value, with: { (snapshot) in
-            guard let dictionaries = snapshot.value as? [String: Any] else { return }
+            guard let dictionaries = snapshot.value as? [String: Any] else {
+                let afreecaRefs = Database.database().reference().child((Auth.auth().currentUser?.uid)!)
+                let ref = afreecaRefs.child("Afreeca").child(bjName)
+                let values = ["name": bjName,
+                              "id": bjId,
+                              "profileurl": profileUrl] as [String: Any]
+                ref.updateChildValues(values){ (err, ref) in
+                    if let err = err {
+                        //실패
+                        self.present(Method.alert(type: .FollowError), animated: true)
+                    }
+                    //성공
+                    self.present(Method.alert(type: .FollowSuccess), animated: true)
+                }
+                return
+            }
             dictionaries.forEach({ (key, value) in
                 guard let dictionary = value as? [String: Any] else { return }
                 let username = dictionary["name"] as! String

@@ -11,12 +11,15 @@ import Alamofire
 import Firebase
 import Kingfisher
 import SnapKit
+import NVActivityIndicatorView
 
 class TwitchSearchViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var textView: UIView!
+    
+    private var activityView: NVActivityIndicatorView!
     
     lazy var imageView: UIImageView = {
         var iv = UIImageView()
@@ -103,6 +106,8 @@ class TwitchSearchViewController: UIViewController {
         imageView.isHidden = true
         mentLabel.isHidden = true
         
+        setupActivityIndicator()
+        
     }
     
     @objc func cancelAction() {
@@ -114,6 +119,14 @@ class TwitchSearchViewController: UIViewController {
             m.height.equalTo(30)
             m.left.equalTo(textView.snp.left).offset(8)
         }
+    }
+    
+    private func setupActivityIndicator() {
+        activityView = NVActivityIndicatorView(frame: CGRect(x: self.view.center.x - 50, y: self.view.center.y - 50, width: 100, height: 100), type: NVActivityIndicatorType.ballBeat, color: UIColor(red: 0/255.0, green: 132/255.0, blue: 137/255.0, alpha: 1), padding: 25)
+        
+        activityView.backgroundColor = .white
+        activityView.layer.cornerRadius = 10
+        self.view.addSubview(activityView)
     }
     
     func makeCellImage(str: String) -> String {
@@ -264,6 +277,7 @@ extension TwitchSearchViewController: UICollectionViewDelegateFlowLayout {
 
 extension TwitchSearchViewController: TwitchCellDelegate {
     func addDatabase() {
+        self.activityView.startAnimating()
         guard let name = self.searchData[0]?.displayName else { return }
         guard let id = self.searchData[0]?.login else { return }
         guard let profileUrl = self.searchData[0]?.profileImageUrl else { return }
@@ -273,13 +287,24 @@ extension TwitchSearchViewController: TwitchCellDelegate {
         var nameArr = Array<String>()
         
         let twitchRef = Database.database().reference().child((Auth.auth().currentUser?.uid)!).child("Twitch")
+    
         twitchRef.observeSingleEvent(of: .value, with: { (snapshot) in
-            print("111")
             guard let dictionaries = snapshot.value as? [String: Any] else {
-                
+                let twitchRefs = Database.database().reference().child((Auth.auth().currentUser?.uid)!)
+                let ref = twitchRefs.child("Twitch").child(name)
+                let values = ["name": name,
+                              "id": id,
+                              "profileurl": profileUrl] as [String: Any]
+                ref.updateChildValues(values){ (err, ref) in
+                    if let err = err {
+                        //실패
+                        self.present(Method.alert(type: .FollowError), animated: true)
+                    }
+                    //성공
+                    self.present(Method.alert(type: .FollowSuccess), animated: true)
+                }
                 return
             }
-            print("222")
             dictionaries.forEach({ (key, value) in
                 guard let dictionary = value as? [String: Any] else { return }
                 let username = dictionary["name"] as! String
