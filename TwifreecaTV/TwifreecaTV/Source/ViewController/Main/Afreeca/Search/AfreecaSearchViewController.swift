@@ -11,6 +11,7 @@ import SnapKit
 import Kingfisher
 import NVActivityIndicatorView
 import Firebase
+import Toast_Swift
 
 class AfreecaSearchViewController: UIViewController {
     
@@ -175,6 +176,7 @@ extension AfreecaSearchViewController: UITextFieldDelegate {
                     self.activityView.stopAnimating()
                 case .failure(let error):
                     print(error)
+                    self.collectionView.makeToast("다시 시도해주세요.", duration: 3.0, position: .center)
                 }
             }
         }else {

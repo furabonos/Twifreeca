@@ -19,7 +19,7 @@ struct TwitchLive: Decodable {
 struct StreamerLiveInfo: Decodable {
     var title: String
     var thumbnailUrl: String
-    var viewerCount: String
+    var viewerCount: Int
     
     enum CodingKeys: String, CodingKey {
         case title

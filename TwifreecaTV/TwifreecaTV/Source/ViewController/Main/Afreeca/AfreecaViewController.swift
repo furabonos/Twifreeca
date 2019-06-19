@@ -88,6 +88,21 @@ class AfreecaViewController: UIViewController {
             m.centerX.equalTo(view.snp.centerX)
         }
         
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshs), for: .valueChanged)
+        refreshControl.isUserInteractionEnabled = false
+        collectionView.alwaysBounceVertical = true
+        collectionView.refreshControl = refreshControl
+        
+    }
+    
+    @objc func refreshs(refreshControl: UIRefreshControl) {
+        self.nameArr.removeAll()
+        self.idArr.removeAll()
+        self.urlArr.removeAll()
+        fetchBjData()
+        refreshControl.endRefreshing()
+        
     }
     
     func fetchBjData() {

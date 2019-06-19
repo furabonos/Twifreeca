@@ -12,12 +12,13 @@ import Alamofire
 protocol TwitchSearchType {
     func searchTwitchStreamer(name: String, completion: @escaping(Result<TwitchSearch>) -> ())
     func searchTwitchVideos(name: String, completion: @escaping(Result<TwitchVideo>) -> ())
+    func liveTwitchStreamer(name: String, completion: @escaping(Result<TwitchLive>) -> ())
 }
 
 struct TwitchSearchService: TwitchSearchType {
     
     static let manager: Alamofire.SessionManager = {
-        let configuration = URLSessionConfiguration.background(withIdentifier: "ffffff")
+        let configuration = URLSessionConfiguration.background(withIdentifier: "fffffff")
         configuration.timeoutIntervalForRequest = 60
         configuration.timeoutIntervalForResource = 60
         configuration.httpCookieStorage = HTTPCookieStorage.shared
@@ -34,7 +35,7 @@ struct TwitchSearchService: TwitchSearchType {
         var parameters = [String: String]()
         parameters.updateValue(name, forKey: "login")
         
-        AfreecaSearchService.manager.request(API.Twitch.twitchSearchURL, method: .get, parameters: parameters, headers: headers)
+        TwitchSearchService.manager.request(API.Twitch.twitchSearchURL, method: .get, parameters: parameters, headers: headers)
             .validate().responseData{ response in
                 switch response.result{
                 case .success(let value):
@@ -60,7 +61,7 @@ struct TwitchSearchService: TwitchSearchType {
         parameters.updateValue(name, forKey: "user_id")
         parameters.updateValue("3", forKey: "first")
         
-        AfreecaSearchService.manager.request(API.Twitch.twitchVideoURL, method: .get, parameters: parameters, headers: headers)
+        TwitchSearchService.manager.request(API.Twitch.twitchVideoURL, method: .get, parameters: parameters, headers: headers)
             .validate().responseData{ response in
                 switch response.result{
                 case .success(let value):
@@ -77,28 +78,31 @@ struct TwitchSearchService: TwitchSearchType {
         }
     }
     
-//    func liveAfreecaBJ(name: String, completion: @escaping (Result<AfreecaLiveInfo>) -> ()) {
-//        var parameters = [
-//            "name": name
-//        ]
-//
-//        AfreecaSearchService.manager.request(API.liveURL, method: .post, parameters: parameters)
-//            .validate().responseData{ response in
-//                switch response.result{
-//                case .success(let value):
-//                    do {
-//                        //                        print("fdsfsdfds")
-//                        let decodableValue = try JSONDecoder().decode(AfreecaLiveInfo.self, from: value)
-//                        //                        print("aa = \(decodableValue)")
-//                        completion(Result.success(decodableValue))
-//                    }catch {
-//
-//                    }
-//                case .failure(let error):
-//                    print("error = \(error)")
-//                    completion(.failure(nil, error))
-//                }
-//        }
-//    }
+    func liveTwitchStreamer(name: String, completion: @escaping (Result<TwitchLive>) -> ()) {
+        
+        var headers = [String: String]()
+        headers.updateValue("gp6ddqo2btpzj4krg78e3i75blsnpw", forKey: "Client-ID")
+        
+        var parameters = [String: String]()
+        parameters.updateValue(name, forKey: "user_login")
+
+        TwitchSearchService.manager.request(API.Twitch.twitchLiveURL, method: .get, parameters: parameters, headers: headers)
+            .validate().responseData{ response in
+                switch response.result{
+                case .success(let value):
+                    do {
+                        let decodableValue = try JSONDecoder().decode(TwitchLive.self, from: value)
+                        completion(Result.success(decodableValue))
+                        print("ssibal = \(decodableValue)")
+                    }catch {
+                        
+                    }
+                case .failure(let error):
+                    print("error = \(error)")
+                    completion(.failure(nil, error))
+                }
+        }
+    }
+    
 }
 

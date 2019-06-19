@@ -83,6 +83,7 @@ PODS:
     - NVActivityIndicatorView/Presenter (= 4.6.1)
   - NVActivityIndicatorView/Presenter (4.6.1)
   - SnapKit (4.2.0)
+  - Toast-Swift (5.0.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -95,6 +96,7 @@ DEPENDENCIES:
   - MarqueeLabel
   - NVActivityIndicatorView
   - SnapKit
+  - Toast-Swift (~> 5.0.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -117,6 +119,7 @@ SPEC REPOS:
     - nanopb
     - NVActivityIndicatorView
     - SnapKit
+    - Toast-Swift
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
@@ -138,7 +141,8 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   NVActivityIndicatorView: 4ca19fccc84595a78957336a086d00a49be6ce61
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  Toast-Swift: 36f4720243c8582c2be243a60a51e193c761f541
 
-PODFILE CHECKSUM: 5770aef9364548bcb63bd338e72130e4644daf40
+PODFILE CHECKSUM: c0172c555ccfddb6af6b996b2680b8e8cae4ca86
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0.beta.1

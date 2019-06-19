@@ -15,3 +15,16 @@ extension String {
     
 }
 
+extension UINavigationController {
+    
+    func backToViewController(viewController: Swift.AnyClass) {
+        
+        for element in viewControllers as Array {
+            if element.isKind(of: viewController) {
+                self.popToViewController(element, animated: true)
+                break
+            }
+        }
+    }
+}
+

@@ -15,7 +15,7 @@ pod 'SnapKit'
 pod 'NVActivityIndicatorView'
 pod 'MarqueeLabel'
 pod 'AMShimmer'
-
+pod 'Toast-Swift', '~> 5.0.0'
   # Pods for TwifreecaTV
 
 end

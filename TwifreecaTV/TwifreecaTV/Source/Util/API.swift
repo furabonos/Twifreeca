@@ -22,5 +22,6 @@ struct API {
     struct Twitch {
         static let twitchSearchURL = "\(twitchURL)/users"
         static let twitchVideoURL = "\(twitchURL)/videos"
+        static let twitchLiveURL = "\(twitchURL)/streams"
     }
 }

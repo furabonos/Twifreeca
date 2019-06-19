@@ -12,6 +12,7 @@ import Firebase
 import Kingfisher
 import SnapKit
 import NVActivityIndicatorView
+import Toast_Swift
 
 class TwitchSearchViewController: UIViewController {
 
@@ -108,6 +109,25 @@ class TwitchSearchViewController: UIViewController {
         
         setupActivityIndicator()
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapOutsideCollectionView(recognizer:)))
+        tap.numberOfTapsRequired = 1
+        self.collectionView.addGestureRecognizer(tap)
+        
+    }
+    
+    func searchInfo() {
+        
+    }
+    
+    @objc func didTapOutsideCollectionView(recognizer: UITapGestureRecognizer){
+        cancelBtn.isHidden = true
+        self.view.endEditing(true)
+        searchTextField.snp.remakeConstraints { (m) in
+            m.top.equalTo(textView.snp.top).offset(15)
+            m.right.equalTo(textView.snp.right).offset(8)
+            m.height.equalTo(30)
+            m.left.equalTo(textView.snp.left).offset(8)
+        }
     }
     
     @objc func cancelAction() {
@@ -124,7 +144,7 @@ class TwitchSearchViewController: UIViewController {
     private func setupActivityIndicator() {
         activityView = NVActivityIndicatorView(frame: CGRect(x: self.view.center.x - 50, y: self.view.center.y - 50, width: 100, height: 100), type: NVActivityIndicatorType.ballBeat, color: UIColor(red: 0/255.0, green: 132/255.0, blue: 137/255.0, alpha: 1), padding: 25)
         
-        activityView.backgroundColor = .white
+        activityView.backgroundColor = .clear
         activityView.layer.cornerRadius = 10
         self.view.addSubview(activityView)
     }
@@ -179,6 +199,7 @@ extension TwitchSearchViewController: UITextFieldDelegate {
                                 self.collectionView.reloadData()
                             case .failure(let error):
                                 print(error)
+                                self.collectionView.makeToast("다시 시도해주세요.", duration: 3.0, position: .center)
                             }
                         })
                     }else {
@@ -189,6 +210,7 @@ extension TwitchSearchViewController: UITextFieldDelegate {
                     }
                 case .failure(let error):
                     print(error)
+                    self.collectionView.makeToast("다시 시도해주세요.", duration: 3.0, position: .center)
                 }
             }
         }else {
@@ -312,7 +334,7 @@ extension TwitchSearchViewController: TwitchCellDelegate {
             })
             if nameArr.contains(name) {
                 self.present(Method.alert(type: .FollowOverlap), animated: true)
-
+//                self.activityView.stopAnimating()
             }else {
                 let afreecaRefs = Database.database().reference().child((Auth.auth().currentUser?.uid)!)
                 let ref = afreecaRefs.child("Twitch").child(name)
@@ -329,6 +351,7 @@ extension TwitchSearchViewController: TwitchCellDelegate {
                 }
 
             }
+            self.activityView.stopAnimating()
         })
         
     }

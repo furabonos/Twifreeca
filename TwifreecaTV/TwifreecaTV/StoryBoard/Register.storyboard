@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="XHi-yo-VE2">
             <objects>
-                <viewController id="h3g-5H-Zgu" customClass="LoginViewController" customModule="TwifreecaTV" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="h3g-5H-Zgu" customClass="LoginViewController" customModule="TwifreecaTV" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3CT-rW-LvO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -212,7 +212,6 @@
         <!--Navigation Controller-->
         <scene sceneID="yTi-sl-Zgy">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8oN-DY-tLD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="foo-B1-yVh" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i8I-7H-QES">
@@ -224,6 +223,7 @@
                         <segue destination="m9e-Fd-qgy" kind="relationship" relationship="rootViewController" id="lWF-1Y-L4L"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8oN-DY-tLD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1512.8" y="161.46926536731635"/>
         </scene>
