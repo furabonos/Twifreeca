@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import Toast_Swift
+import Kingfisher
 
 class TwitchViewController: UIViewController {
     
@@ -38,6 +39,15 @@ class TwitchViewController: UIViewController {
         super.viewWillAppear(true)
         setupInitialize()
         fetchStreamerData()
+//        resetDefaults()
+    }
+    
+    func resetDefaults() {
+        let defaults = UserDefaults.standard
+        let dictionary = defaults.dictionaryRepresentation()
+        dictionary.keys.forEach { key in
+            defaults.removeObject(forKey: key)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -142,12 +152,6 @@ class TwitchViewController: UIViewController {
     
     @IBAction func logOut(_ sender: Any) {
         try! Auth.auth().signOut()
-//        let storyBoard: UIStoryboard = UIStoryboard(name: "Register", bundle: nil)
-//        let newViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController")
-//        self.present(newViewController, animated: true, completion: nil)
-//        let appDelegate = UIApplication.shared.delegate! as! AppDelegate
-//        let storyboard = UIStoryboard(name: "Register", bundle: nil)
-//        let initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
         let appDelegate = UIApplication.shared.delegate! as! AppDelegate
         let storyboard = UIStoryboard(name: "Register", bundle: nil)
         let initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
@@ -155,15 +159,6 @@ class TwitchViewController: UIViewController {
         let navEditorViewController: UINavigationController = UINavigationController(rootViewController: initialViewController)
         
         appDelegate.window?.rootViewController = navEditorViewController
-//        self.navigationController?.popToViewController(initialViewController, animated: true)
-//        self.present(initialViewController, animated: true)
-//        navigationController?.pushViewController(initialViewController, animated: true)
-//        appDelegate.window?.rootViewController = initialViewController
-//        navigationController?.popViewController(animated: true)
-//        self.dismiss(animated: true)
-//        let editorViewController = initialViewController
-//        let navEditorViewController: UINavigationController = UINavigationController(rootViewController: editorViewController)
-//        self.present(navEditorViewController, animated: true, completion: nil)
         
     }
     
@@ -178,10 +173,17 @@ extension TwitchViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TwitchCollectionViewCell", for: indexPath) as! TwitchCollectionViewCell
         if self.nameArr.count > 0 {
+            DispatchQueue.main.async {
+                KingfisherManager.shared.cache.clearMemoryCache()
+                KingfisherManager.shared.cache.clearDiskCache()
+                KingfisherManager.shared.cache.cleanExpiredDiskCache()
+            }
+            cell.streamerImageView.image = nil
             cell.streamerNameLabel.text = "\(self.nameArr[indexPath.row])(\(self.idArr[indexPath.row]))"
             checkLive(name: self.idArr[indexPath.row]) { (result) in
                 switch result[0] {
                 case "ON":
+                    print("fjdfjlsdkfjkdlsfjldskfjdlskfjsdkl = \(self.makeCellImage(str: result[2]))")
                     cell.streamMrLabel.text = result[1]
                     cell.streamerImageView.kf.setImage(with: URL(string: self.makeCellImage(str: result[2])))
                     cell.redCircle.isHidden = false
@@ -194,6 +196,7 @@ extension TwitchViewController: UICollectionViewDataSource {
                 default:
                     break
                 }
+                
             }
         }
         return cell

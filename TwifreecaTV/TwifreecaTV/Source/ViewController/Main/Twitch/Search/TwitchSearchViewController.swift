@@ -113,6 +113,18 @@ class TwitchSearchViewController: UIViewController {
         tap.numberOfTapsRequired = 1
         self.collectionView.addGestureRecognizer(tap)
         
+        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        if launchedBefore
+        {
+            print("Not first launch.")
+        }
+        else
+        {
+            print("First launch")
+            self.present(Method.alert(type: .FirstLaunch), animated: true)
+            UserDefaults.standard.set(true, forKey: "launchedBefore")
+        }
+        
     }
     
     func searchInfo() {

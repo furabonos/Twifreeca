@@ -16,6 +16,7 @@ enum alertTypes {
     case FollowError
     case FollowOverlap
     case DelSuccess
+    case FirstLaunch
 }
 
 class Method: NSObject {
@@ -53,6 +54,11 @@ class Method: NSObject {
             return alertController
         case .DelSuccess:
             let alertController = UIAlertController(title: "알림",message: "삭제되었습니다.", preferredStyle: UIAlertController.Style.alert)
+            let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.cancel, handler: nil)
+            alertController.addAction(cancelButton)
+            return alertController
+        case .FirstLaunch:
+            let alertController = UIAlertController(title: "알림",message: "검색어를 입력하실땐 닉네임말고 ID를 입력해주셔야 합니다.\n ex)한동숙(x), handongsuk(o)", preferredStyle: UIAlertController.Style.alert)
             let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.cancel, handler: nil)
             alertController.addAction(cancelButton)
             return alertController

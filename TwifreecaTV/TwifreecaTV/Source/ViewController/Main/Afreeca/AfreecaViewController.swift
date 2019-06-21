@@ -175,6 +175,11 @@ extension AfreecaViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AfreecaCollectionViewCell", for: indexPath) as! AfreecaCollectionViewCell
        
         if self.nameArr.count > 0 {
+            DispatchQueue.main.async {
+                KingfisherManager.shared.cache.clearMemoryCache()
+                KingfisherManager.shared.cache.clearDiskCache()
+                KingfisherManager.shared.cache.cleanExpiredDiskCache()
+            }
             cell.delegate = self
             cell.delBtn.tag = indexPath.row
 //            cell.bjLabel.text = self.nameArr[indexPath.row]
