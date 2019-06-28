@@ -46,9 +46,12 @@ class EmailViewController: UIViewController {
                     guard let uid = user?.user.uid else { return }
                     UserSingleton.shared.uid = uid
 //                    self.present(Method.alert(type: .RegisterSuccess), animated: true)
-                    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "TwitchViewController")
-                    self.navigationController?.pushViewController(newViewController, animated: true)
+//                    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//                    let newViewController = storyBoard.instantiateViewController(withIdentifier: "TwitchViewController")
+//                    self.navigationController?.pushViewController(newViewController, animated: true)
+                    self.dismiss(animated: true, completion: {
+                        try! Auth.auth().signOut()
+                    })
                 }else {
                     //fail(아이디 중복말고없을듯?)
                     self.present(Method.alert(type: .RegisterError), animated: true)

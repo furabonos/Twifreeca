@@ -93,7 +93,7 @@ class AfreecaViewController: UIViewController {
         refreshControl.isUserInteractionEnabled = false
         collectionView.alwaysBounceVertical = true
         collectionView.refreshControl = refreshControl
-        
+        self.tabBarController?.tabBar.barTintColor = UIColor(red: 7/255, green: 61/255, blue: 167/255, alpha: 1.0)
     }
     
     @objc func refreshs(refreshControl: UIRefreshControl) {
@@ -148,6 +148,25 @@ class AfreecaViewController: UIViewController {
                 print(error)
             }
         }
+        
+    }
+    
+    func deleteBj(bj: String) {
+        let alertController = UIAlertController(title: "",message: "리스트에서 삭제하시겠습니까?", preferredStyle: UIAlertController.Style.alert)
+        let cancelButton = UIAlertAction(title: "삭제", style: UIAlertAction.Style.destructive) { (ac) in
+            let twitchRef = Database.database().reference().child((Auth.auth().currentUser?.uid)!).child("Afreeca").child("\(bj)")
+            twitchRef.removeValue()
+            self.present(Method.alert(type: .DelSuccess), animated: true, completion: {
+                self.nameArr.removeAll()
+                self.idArr.removeAll()
+                self.urlArr.removeAll()
+                self.fetchBjData()
+            })
+        }
+        let cancelButton2 = UIAlertAction(title: "취소", style: UIAlertAction.Style.default, handler: nil)
+        alertController.addAction(cancelButton)
+        alertController.addAction(cancelButton2)
+        self.present(alertController, animated: true)
         
     }
     
@@ -217,6 +236,28 @@ extension AfreecaViewController: UICollectionViewDataSource {
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        checkLive(name: self.idArr[indexPath.row]) { (result) in
+            switch result[0] {
+            case "ON":
+                print("fdfsdfsdfsdfsdfsd = \(result[2])")
+                var sss = result[2]
+                var sss2 = sss.replaces(target: "liveimg.afreecatv.com/", withString: "")
+                var broadNum = sss2.replaces(target: ".jpg", withString: "")
+                
+                let afreecaScheme = URL(string: "afreeca://player/live?user_id=\(self.idArr[indexPath.row])&broad_no=\(broadNum)")!
+                
+                if UIApplication.shared.canOpenURL(afreecaScheme) {
+                    UIApplication.shared.open(afreecaScheme) // 오픈을 사용하면 화이트 리스트 없어도 들어갈 수 이씅나,화이트 리스트를 활용하자 !
+                }else {
+                    self.present(Method.alert(type: .AfreecaStore), animated: true)
+                }
+            default:
+                break
+            }
+        }
+    }
 }
 
 extension AfreecaViewController: UICollectionViewDelegateFlowLayout {
@@ -228,14 +269,6 @@ extension AfreecaViewController: UICollectionViewDelegateFlowLayout {
 
 extension AfreecaViewController: DeleteBjDelegate {
     func delDatabase(cell: AfreecaCollectionViewCell) {
-        let afreecaRef = Database.database().reference().child((Auth.auth().currentUser?.uid)!).child("Afreeca").child("\(self.nameArr[cell.delBtn.tag])")
-        afreecaRef.removeValue()
-        self.present(Method.alert(type: .DelSuccess), animated: true, completion: {
-            self.nameArr.removeAll()
-            self.idArr.removeAll()
-            self.urlArr.removeAll()
-            self.fetchBjData()
-        })
-        
+        self.deleteBj(bj: self.nameArr[cell.delBtn.tag])
     }
 }

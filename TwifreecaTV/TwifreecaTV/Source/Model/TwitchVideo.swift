@@ -21,9 +21,10 @@ struct TwitchVideoInfo: Decodable {
     var url: String
     var userName: String
     var thumbnailUrl: String
+    var id: String
     
     enum CodingKeys: String, CodingKey {
-        case title, url
+        case title, url, id
         case userName = "user_name"
         case thumbnailUrl = "thumbnail_url"
     }

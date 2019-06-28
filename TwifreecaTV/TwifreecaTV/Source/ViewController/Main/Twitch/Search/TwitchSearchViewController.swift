@@ -60,7 +60,7 @@ class TwitchSearchViewController: UIViewController {
         self.view.endEditing(true)
         searchTextField.snp.remakeConstraints { (m) in
             m.top.equalTo(textView.snp.top).offset(15)
-            m.right.equalTo(textView.snp.right).offset(8)
+            m.right.equalTo(textView.snp.right).offset(-8)
             m.height.equalTo(30)
             m.left.equalTo(textView.snp.left).offset(8)
         }
@@ -111,7 +111,7 @@ class TwitchSearchViewController: UIViewController {
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(didTapOutsideCollectionView(recognizer:)))
         tap.numberOfTapsRequired = 1
-        self.collectionView.addGestureRecognizer(tap)
+//        self.collectionView.addGestureRecognizer(tap)
         
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
         if launchedBefore
@@ -136,7 +136,7 @@ class TwitchSearchViewController: UIViewController {
         self.view.endEditing(true)
         searchTextField.snp.remakeConstraints { (m) in
             m.top.equalTo(textView.snp.top).offset(15)
-            m.right.equalTo(textView.snp.right).offset(8)
+            m.right.equalTo(textView.snp.right).offset(-8)
             m.height.equalTo(30)
             m.left.equalTo(textView.snp.left).offset(8)
         }
@@ -147,7 +147,7 @@ class TwitchSearchViewController: UIViewController {
         self.view.endEditing(true)
         searchTextField.snp.remakeConstraints { (m) in
             m.top.equalTo(textView.snp.top).offset(15)
-            m.right.equalTo(textView.snp.right).offset(8)
+            m.right.equalTo(textView.snp.right).offset(-8)
             m.height.equalTo(30)
             m.left.equalTo(textView.snp.left).offset(8)
         }
@@ -174,9 +174,9 @@ extension TwitchSearchViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         self.cancelBtn.isHidden = false
-        textField.snp.remakeConstraints { (m) in
+        self.searchTextField.snp.remakeConstraints { (m) in
             m.top.equalTo(textView.snp.top).offset(15)
-            m.right.equalTo(textView.snp.right).offset(8)
+            m.right.equalTo(textView.snp.right).offset(-8)
             m.height.equalTo(30)
             m.left.equalTo(textView.snp.left).offset(70)
         }
@@ -189,7 +189,7 @@ extension TwitchSearchViewController: UITextFieldDelegate {
         
         searchTextField.snp.remakeConstraints { (m) in
             m.top.equalTo(textView.snp.top).offset(15)
-            m.right.equalTo(textView.snp.right).offset(8)
+            m.right.equalTo(textView.snp.right).offset(-8)
             m.height.equalTo(30)
             m.left.equalTo(textView.snp.left).offset(8)
         }
@@ -205,6 +205,7 @@ extension TwitchSearchViewController: UITextFieldDelegate {
                         self.twitchService.searchTwitchVideos(name: self.searchData[0]?.id ?? "", completion: { (result) in
                             switch result {
                             case .success(let value):
+                                print("0625 = \(value)")
                                 self.videoData = value.data
                                 self.imageView.isHidden = true
                                 self.mentLabel.isHidden = true
@@ -248,9 +249,10 @@ extension TwitchSearchViewController: UITextFieldDelegate {
         
         return header
     }
+    
 }
 
-extension TwitchSearchViewController: UICollectionViewDataSource {
+extension TwitchSearchViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
@@ -268,6 +270,9 @@ extension TwitchSearchViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TwitchSearchCell", for: indexPath) as! TwitchSearchCell
+        cell.setNeedsUpdateConstraints()
+        cell.updateConstraints()
+        cell.layoutIfNeeded()
         if indexPath.section == 0 {
             if searchData.count > 0 {
                 cell.delegate = self
@@ -285,6 +290,22 @@ extension TwitchSearchViewController: UICollectionViewDataSource {
             }
         }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            print("000")
+        }else {
+            guard let videoID = self.videoData[indexPath.row]?.id else { return }
+            let twitchScheme = URL(string: "twitch://video/\(videoID)")!
+            
+            if UIApplication.shared.canOpenURL(twitchScheme) {
+                UIApplication.shared.open(twitchScheme)
+            }else {
+                self.present(Method.alert(type: .TwtichStore), animated: true)
+            }
+        }
+        
     }
     
 }

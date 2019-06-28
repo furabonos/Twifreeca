@@ -40,6 +40,7 @@ class TwitchViewController: UIViewController {
         setupInitialize()
         fetchStreamerData()
 //        resetDefaults()
+        
     }
     
     func resetDefaults() {
@@ -75,7 +76,7 @@ class TwitchViewController: UIViewController {
         refreshControl.isUserInteractionEnabled = false
         collectionView.alwaysBounceVertical = true
         collectionView.refreshControl = refreshControl
-        
+        self.tabBarController?.tabBar.barTintColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1.0)
     }
     
     @objc func refreshs(refreshControl: UIRefreshControl) {
@@ -146,6 +147,25 @@ class TwitchViewController: UIViewController {
         return c3
     }
     
+    func deleteStreamer(streamer: String) {
+        let alertController = UIAlertController(title: "",message: "리스트에서 삭제하시겠습니까?", preferredStyle: UIAlertController.Style.alert)
+        let cancelButton = UIAlertAction(title: "삭제", style: UIAlertAction.Style.destructive) { (ac) in
+            let twitchRef = Database.database().reference().child((Auth.auth().currentUser?.uid)!).child("Twitch").child("\(streamer)")
+            twitchRef.removeValue()
+            self.present(Method.alert(type: .DelSuccess), animated: true, completion: {
+                self.nameArr.removeAll()
+                self.idArr.removeAll()
+                self.urlArr.removeAll()
+                self.fetchStreamerData()
+            })
+        }
+        let cancelButton2 = UIAlertAction(title: "취소", style: UIAlertAction.Style.default, handler: nil)
+        alertController.addAction(cancelButton)
+        alertController.addAction(cancelButton2)
+        self.present(alertController, animated: true)
+        
+    }
+    
 //    @IBAction func fdsfsdfsd(_ sender: Any) {
 //        try! Auth.auth().signOut()
 //    }
@@ -172,6 +192,8 @@ extension TwitchViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TwitchCollectionViewCell", for: indexPath) as! TwitchCollectionViewCell
+        cell.delegate = self
+        cell.delBtn.tag = indexPath.row
         if self.nameArr.count > 0 {
             DispatchQueue.main.async {
                 KingfisherManager.shared.cache.clearMemoryCache()
@@ -187,6 +209,7 @@ extension TwitchViewController: UICollectionViewDataSource {
                     cell.streamMrLabel.text = result[1]
                     cell.streamerImageView.kf.setImage(with: URL(string: self.makeCellImage(str: result[2])))
                     cell.redCircle.isHidden = false
+                    cell.viewerLabel.isHidden = false
                     cell.viewerLabel.text = result[3]
                 case "OFF":
                     cell.streamMrLabel.text = "현재 방송중이지 않습니다."
@@ -202,11 +225,35 @@ extension TwitchViewController: UICollectionViewDataSource {
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        checkLive(name: self.idArr[indexPath.row]) { (result) in
+            switch result[0] {
+            case "ON":
+                let twitchScheme = URL(string: "twitch://stream/\(self.idArr[indexPath.row])")!
+                
+                if UIApplication.shared.canOpenURL(twitchScheme) {
+                    UIApplication.shared.open(twitchScheme) // 오픈을 사용하면 화이트 리스트 없어도 들어갈 수 이씅나,화이트 리스트를 활용하자 !
+                }else {
+                    self.present(Method.alert(type: .TwtichStore), animated: true)
+                }
+            default:
+                break
+            }
+        }
+        
+    }
+    
     
 }
 
 extension TwitchViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: 100)
+    }
+}
+
+extension TwitchViewController: DeleteStreamerDelegate {
+    func delDatabase(cell: TwitchCollectionViewCell) {
+        self.deleteStreamer(streamer: self.nameArr[cell.delBtn.tag])
     }
 }

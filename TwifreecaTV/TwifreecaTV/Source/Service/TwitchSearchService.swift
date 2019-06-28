@@ -18,7 +18,8 @@ protocol TwitchSearchType {
 struct TwitchSearchService: TwitchSearchType {
     
     static let manager: Alamofire.SessionManager = {
-        let configuration = URLSessionConfiguration.background(withIdentifier: "fffffff")
+        let deviceId = UIDevice.current.identifierForVendor?.uuidString
+        let configuration = URLSessionConfiguration.background(withIdentifier: "\(deviceId)")
         configuration.timeoutIntervalForRequest = 60
         configuration.timeoutIntervalForResource = 60
         configuration.httpCookieStorage = HTTPCookieStorage.shared

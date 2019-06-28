@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -100,6 +100,7 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="WZL-s2-UL0" firstAttribute="leading" secondItem="aUT-rf-2hr" secondAttribute="leading" id="87G-36-a2S"/>
                             <constraint firstItem="aUT-rf-2hr" firstAttribute="bottom" secondItem="WZL-s2-UL0" secondAttribute="bottom" id="IsK-rz-HED"/>
@@ -224,6 +225,7 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ur7-FG-sbG" firstAttribute="trailing" secondItem="frm-g3-1ek" secondAttribute="trailing" id="9tJ-EU-HQ6"/>
                             <constraint firstItem="frm-g3-1ek" firstAttribute="leading" secondItem="ur7-FG-sbG" secondAttribute="leading" id="HY8-Uk-Fvh"/>
@@ -246,11 +248,13 @@
             </objects>
             <point key="canvasLocation" x="4748" y="-423"/>
         </scene>
-        <!--Afreeca-->
+        <!--Navigation Controller-->
         <scene sceneID="fUQ-Hu-bwi">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="y5H-e0-cfU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Afreeca" id="y4D-lJ-pA7"/>
+                    <tabBarItem key="tabBarItem" title="" image="AFLOGO" selectedImage="AFLOGO" id="y4D-lJ-pA7">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sEa-KI-hzK">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -277,6 +281,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="">
+                                <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="OrZ-x3-Hpa" kind="relationship" relationship="viewControllers" id="9ob-kQ-Ril"/>
@@ -287,13 +297,16 @@
             </objects>
             <point key="canvasLocation" x="2538" y="-423"/>
         </scene>
-        <!--Twitch-->
+        <!--Navigation Controller-->
         <scene sceneID="A3Y-yB-8sZ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OrZ-x3-Hpa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Twitch" id="ITa-WN-37W"/>
+                    <tabBarItem key="tabBarItem" title="" image="twitch3" selectedImage="twitch3" id="ITa-WN-37W">
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="K7N-PT-DC8">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.36862745099999999" green="0.2470588235" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -310,6 +323,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="magnifier" width="12" height="12"/>
+        <image name="AFLOGO" width="22" height="23"/>
+        <image name="magnifier" width="16" height="16"/>
+        <image name="twitch3" width="24" height="24"/>
     </resources>
 </document>
