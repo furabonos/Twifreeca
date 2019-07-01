@@ -162,7 +162,7 @@ class TwitchViewController: UIViewController {
         let cancelButton2 = UIAlertAction(title: "취소", style: UIAlertAction.Style.default, handler: nil)
         alertController.addAction(cancelButton)
         alertController.addAction(cancelButton2)
-        self.present(alertController, animated: true)         
+        self.present(alertController, animated: true)
         
     }
     
