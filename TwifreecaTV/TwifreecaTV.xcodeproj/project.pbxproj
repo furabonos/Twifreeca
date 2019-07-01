@@ -64,8 +64,8 @@
 		569884EF22B224C5006A5E1E /* TwitchVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitchVideo.swift; sourceTree = "<group>"; };
 		569884F522B23F5D006A5E1E /* TwitchHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitchHeader.swift; sourceTree = "<group>"; };
 		569884F622B23F5D006A5E1E /* TwitchHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TwitchHeader.xib; sourceTree = "<group>"; };
-		569884FA22B762ED006A5E1E /* TwitchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TwitchCollectionViewCell.swift; path = "../../../../../../../../../../Library/Autosave Information/TwitchCollectionViewCell.swift"; sourceTree = "<group>"; };
-		569884FB22B762ED006A5E1E /* TwitchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TwitchCollectionViewCell.xib; path = "../../../../../../../../../../Library/Autosave Information/TwitchCollectionViewCell.xib"; sourceTree = "<group>"; };
+		569884FA22B762ED006A5E1E /* TwitchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitchCollectionViewCell.swift; sourceTree = "<group>"; };
+		569884FB22B762ED006A5E1E /* TwitchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TwitchCollectionViewCell.xib; sourceTree = "<group>"; };
 		56B5478922951FE300BB21CB /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		56B5478B2295201300BB21CB /* AfreecaSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfreecaSearch.swift; sourceTree = "<group>"; };
 		56B5478D2295204300BB21CB /* AfreecaSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfreecaSearchService.swift; sourceTree = "<group>"; };
