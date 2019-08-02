@@ -20,8 +20,8 @@ struct TwitchSearchService: TwitchSearchType {
     static let manager: Alamofire.SessionManager = {
         let deviceId = UIDevice.current.identifierForVendor?.uuidString
         let configuration = URLSessionConfiguration.background(withIdentifier: "\(deviceId)")
-        configuration.timeoutIntervalForRequest = 60
-        configuration.timeoutIntervalForResource = 60
+        configuration.timeoutIntervalForRequest = 120
+        configuration.timeoutIntervalForResource = 120
         configuration.httpCookieStorage = HTTPCookieStorage.shared
         configuration.urlCache = URLCache(memoryCapacity: 0, diskCapacity: 0, diskPath: nil)
         let manager = Alamofire.SessionManager(configuration: configuration)

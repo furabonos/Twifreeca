@@ -354,9 +354,11 @@ extension TwitchSearchViewController: TwitchCellDelegate {
                     if let err = err {
                         //실패
                         self.present(Method.alert(type: .FollowError), animated: true)
+                        self.activityView.stopAnimating()
                     }
                     //성공
                     self.present(Method.alert(type: .FollowSuccess), animated: true)
+                    self.activityView.stopAnimating()
                 }
                 return
             }
@@ -367,7 +369,7 @@ extension TwitchSearchViewController: TwitchCellDelegate {
             })
             if nameArr.contains(name) {
                 self.present(Method.alert(type: .FollowOverlap), animated: true)
-//                self.activityView.stopAnimating()
+                self.activityView.stopAnimating()
             }else {
                 let afreecaRefs = Database.database().reference().child((Auth.auth().currentUser?.uid)!)
                 let ref = afreecaRefs.child("Twitch").child(name)
@@ -378,9 +380,11 @@ extension TwitchSearchViewController: TwitchCellDelegate {
                     if let err = err {
                         //실패
                         self.present(Method.alert(type: .FollowError), animated: true)
+                        self.activityView.stopAnimating()
                     }
                     //성공
                     self.present(Method.alert(type: .FollowSuccess), animated: true)
+                    self.activityView.stopAnimating()
                 }
 
             }

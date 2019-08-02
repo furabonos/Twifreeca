@@ -153,6 +153,9 @@ class TwitchViewController: UIViewController {
             let twitchRef = Database.database().reference().child((Auth.auth().currentUser?.uid)!).child("Twitch").child("\(streamer)")
             twitchRef.removeValue()
             self.present(Method.alert(type: .DelSuccess), animated: true, completion: {
+                self.collectionView.isHidden = true
+                self.view.backgroundColor = UIColor(red: 25/255, green: 22/255, blue: 28/255, alpha: 1.0)
+                self.navigationController?.navigationBar.backgroundColor = .white
                 self.nameArr.removeAll()
                 self.idArr.removeAll()
                 self.urlArr.removeAll()

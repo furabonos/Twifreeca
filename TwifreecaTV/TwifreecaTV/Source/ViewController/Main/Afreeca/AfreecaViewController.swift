@@ -39,8 +39,15 @@ class AfreecaViewController: UIViewController {
     var nameArr = Array<String>()
     var idArr = Array<String>()
     var urlArr = Array<String>()
+    var broadNumArr = Array<String>()
+    
+    var bjNameArr = Array<String>()
+    var thumbnailArr = Array<String>()
+    var titleArr = Array<String>()
     
     var onOff = String()
+    
+    var checkBool = true
     
     
     override func viewDidLoad() {
@@ -50,6 +57,9 @@ class AfreecaViewController: UIViewController {
             UINib(nibName: "AfreecaCollectionViewCell", bundle: nil),
             forCellWithReuseIdentifier: "AfreecaCollectionViewCell"
         )
+        self.checkLive2(name: "170110") { (result) in
+            print("ssss = \(result)")
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -151,12 +161,57 @@ class AfreecaViewController: UIViewController {
         
     }
     
+    func checkLive2(name: String, completion: @escaping (Array<String>) -> ()) {
+        var checkLiveArr = Array<String>()
+        let afreecaRef = Database.database().reference().child("AfreecaLive").child(name)
+        afreecaRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let dictionaries = snapshot.value as? [String: Any] else {
+                checkLiveArr.append("OFF")
+                completion(checkLiveArr)
+                return
+            }
+            let bjName = dictionaries["name"] as! String
+            let thumbnailURL = dictionaries["thumbnail"] as! String
+            let bjTitle = dictionaries["title"] as! String
+            let broadLink = dictionaries["link"] as! String
+            print(bjName,thumbnailURL,bjTitle, broadLink)
+            checkLiveArr.append("ON")
+            checkLiveArr.append(bjName)
+            checkLiveArr.append(thumbnailURL)
+            checkLiveArr.append(bjTitle)
+            checkLiveArr.append(broadLink)
+            completion(checkLiveArr)
+//            dictionaries.forEach({ (key, value) in
+//                guard let dictionary = value as? [String: Any] else { return }
+//                let bjName = dictionary["name"] as! String
+//                let thumbnailURL = dictionary["thumbnail"] as! String
+//                let bjTitle = dictionary["title"] as! String
+//
+//                print("ffff = \(bjName)")
+//
+//                self.bjNameArr.append(bjName)
+//                self.thumbnailArr.append(thumbnailURL)
+//                self.titleArr.append(bjTitle)
+            
+//            })
+//            print("으악 = \(self.bjNameArr[0])")
+//            print("으악 = \(self.thumbnailArr[0])")
+//            print("으악 = \(self.titleArr[0])")
+        
+            
+        })
+        
+    }
+    
     func deleteBj(bj: String) {
         let alertController = UIAlertController(title: "",message: "리스트에서 삭제하시겠습니까?", preferredStyle: UIAlertController.Style.alert)
         let cancelButton = UIAlertAction(title: "삭제", style: UIAlertAction.Style.destructive) { (ac) in
             let twitchRef = Database.database().reference().child((Auth.auth().currentUser?.uid)!).child("Afreeca").child("\(bj)")
             twitchRef.removeValue()
             self.present(Method.alert(type: .DelSuccess), animated: true, completion: {
+                self.collectionView.isHidden = true
+                self.view.backgroundColor = UIColor(red: 214/255, green: 214/255, blue: 214/255, alpha: 1.0)
+                self.navigationController?.navigationBar.backgroundColor = .white
                 self.nameArr.removeAll()
                 self.idArr.removeAll()
                 self.urlArr.removeAll()
@@ -201,62 +256,67 @@ extension AfreecaViewController: UICollectionViewDataSource {
             }
             cell.delegate = self
             cell.delBtn.tag = indexPath.row
-//            cell.bjLabel.text = self.nameArr[indexPath.row]
-            checkLive(name: self.idArr[indexPath.row]) { (result) in
+            checkLive2(name: self.idArr[indexPath.row]) { (result) in
                 switch result[0] {
                 case "ON":
-                    print("fdfsdfsdfsdfsdfsd = \(result[2])")
+                    print("ONONON")
                     cell.onOffLabel.text = "onAir"
                     cell.onOffLabel.backgroundColor = .red
                     cell.onOffLabel.textColor = .white
-//                    cell.broadcastLabel.text = result[1]
+                    cell.mrLabel.text = result[3]
                     cell.broadcastLabel.isHidden = true
-                    cell.mrLabel.text = result[1]
                     cell.bjImageView.kf.setImage(with: URL(string: self.makeURL(urls: result[2])))
-//                    cell.bjImageView.kf.setImage(with: URL(string: "http://liveimg.afreecatv.com/214770318.jpg"))
-
                 case "OFF":
+                    print("OFFOFFOFF")
                     cell.onOffLabel.text = "OFF"
-                    cell.bjImageView.kf.setImage(with: URL(string: self.makeURL(urls: self.urlArr[indexPath.row])))
-//                    cell.broadcastLabel.text = "현재 방송중이지 않습니다."
-                    cell.broadcastLabel.isHidden = true
+                    cell.onOffLabel.backgroundColor = .white
+                    cell.onOffLabel.textColor = .black
                     cell.mrLabel.text = "현재 방송중이지 않습니다."
+                    cell.broadcastLabel.isHidden = true
+                    cell.bjImageView.kf.setImage(with: URL(string: self.makeURL(urls: self.urlArr[indexPath.row])))
                 default:
                     break
                 }
-                cell.bjLabel.text = self.nameArr[indexPath.row]
+                cell.bjLabel.text = "\(self.nameArr[indexPath.row])(\(self.idArr[indexPath.row]))"
                 cell.delBtn.isHidden = false
                 AMShimmer.stop(for: cell.bjImageView)
                 AMShimmer.stop(for: cell.onOffLabel)
                 AMShimmer.stop(for: cell.bjLabel)
             }
-//            cell.bjLabel.text = self.nameArr[indexPath.row]
-//            cell.bjImageView.kf.setImage(with: URL(string: makeURL(urls: self.urlArr[indexPath.row])))
         }
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        checkLive(name: self.idArr[indexPath.row]) { (result) in
+        checkLive2(name: self.idArr[indexPath.row]) { (result) in
             switch result[0] {
             case "ON":
-                print("fdfsdfsdfsdfsdfsd = \(result[2])")
-                var sss = result[2]
-                var sss2 = sss.replaces(target: "liveimg.afreecatv.com/", withString: "")
-                var broadNum = sss2.replaces(target: ".jpg", withString: "")
-                
-                let afreecaScheme = URL(string: "afreeca://player/live?user_id=\(self.idArr[indexPath.row])&broad_no=\(broadNum)")!
-                
-                if UIApplication.shared.canOpenURL(afreecaScheme) {
-                    UIApplication.shared.open(afreecaScheme) // 오픈을 사용하면 화이트 리스트 없어도 들어갈 수 이씅나,화이트 리스트를 활용하자 !
-                }else {
-                    self.present(Method.alert(type: .AfreecaStore), animated: true)
-                }
+                print(result[4])
+                print(result[4].replaces(target: "http://play.afreecatv.com/", withString: "").replaces(target: "\(self.idArr[indexPath.row])/", withString: ""))
             default:
                 break
             }
         }
+//        checkLive(name: self.idArr[indexPath.row]) { (result) in
+//            switch result[0] {
+//            case "ON":
+//                print("fdfsdfsdfsdfsdfsd = \(result[2])")
+//                var sss = result[2]
+//                var sss2 = sss.replaces(target: "liveimg.afreecatv.com/", withString: "")
+//                var broadNum = sss2.replaces(target: ".jpg", withString: "")
+//                print(broadNum)
+//                let afreecaScheme = URL(string: "afreeca://player/live?user_id=\(self.idArr[indexPath.row])&broad_no=\(broadNum)")!
+//
+//                if UIApplication.shared.canOpenURL(afreecaScheme) {
+//                    UIApplication.shared.open(afreecaScheme) // 오픈을 사용하면 화이트 리스트 없어도 들어갈 수 이씅나,화이트 리스트를 활용하자 !
+//                }else {
+//                    self.present(Method.alert(type: .AfreecaStore), animated: true)
+//                }
+//            default:
+//                break
+//            }
+//        }
     }
 }
 

@@ -10,8 +10,8 @@ import Foundation
 
 struct API {
     
-    static let searchURL = "http://0.0.0.0:5001/bjlist"
-    static let liveURL = "http://0.0.0.0:5006/nowsss"
+    static let searchURL = "http://13.209.97.201:5000/bjlist"
+    static let liveURL = "http://13.209.97.201:5000/livenow"
     
     static let twitchURL = "https://api.twitch.tv/helix"
     

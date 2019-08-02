@@ -176,6 +176,7 @@ extension AfreecaSearchViewController: UITextFieldDelegate {
                     self.activityView.stopAnimating()
                 case .failure(let error):
                     print(error)
+                    self.activityView.stopAnimating()
                     self.collectionView.makeToast("다시 시도해주세요.", duration: 3.0, position: .center)
                 }
             }
@@ -242,7 +243,8 @@ extension AfreecaSearchViewController: CellDelegate {
         guard let bjId = searchData[cell.addBtn.tag]?.bjid else { return }
         guard let profileUrl = searchData[cell.addBtn.tag]?.profileurl else { return }
         var nameArr = Array<String>()
-        
+        print("0703 = \(bjName)(\(bjId))")
+        var displayName = "\(bjName)(\(bjId))"
         let afreecaRef = Database.database().reference().child((Auth.auth().currentUser?.uid)!).child("Afreeca")
         afreecaRef.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let dictionaries = snapshot.value as? [String: Any] else {

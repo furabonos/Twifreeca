@@ -32,14 +32,15 @@ struct AfreecaSearchService: AfreecaSearchType {
             "name": name
         ]
         
-        TwitchSearchService.manager.request(API.searchURL, method: .post, parameters: parameters)
+        Alamofire.request(API.searchURL, method: .post, parameters: parameters)
             .validate().responseData{ response in
+//                print("0702")
                 switch response.result{
                 case .success(let value):
                     do {
-//                        print("fdsfsdfds")
+                        print("0702")
                         let decodableValue = try JSONDecoder().decode(AfreecaSearch.self, from: value)
-//                        print("aa = \(decodableValue)")
+                        print("aa = \(decodableValue)")
                         completion(Result.success(decodableValue))
                     }catch {
                         
@@ -56,7 +57,7 @@ struct AfreecaSearchService: AfreecaSearchType {
             "name": name
         ]
         
-        TwitchSearchService.manager.request(API.liveURL, method: .post, parameters: parameters)
+        Alamofire.request(API.liveURL, method: .post, parameters: parameters)
             .validate().responseData{ response in
                 switch response.result{
                 case .success(let value):
